@@ -1,0 +1,106 @@
+/* src/app.css */
+/* Importamos la fuente Inter para ese look moderno y limpio */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  /* Tus colores de marca NovaKit */
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --text-main: #111827;
+  --text-secondary: #6b7280;
+  --bg-main: #ffffff;
+  --bg-soft: #f9fafb;
+
+  /* Motion & sombras “premium” */
+  --ease-out-soft: cubic-bezier(0.18, 0.8, 0.25, 1);
+  --ease-soft-bounce: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  --shadow-soft-lg: 0 22px 55px rgba(15, 23, 42, 0.14);
+  --shadow-soft-md: 0 14px 35px rgba(15, 23, 42, 0.12);
+  --ring-soft: 0 0 0 1px rgba(148, 163, 184, 0.18);
+  --assembly-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --assembly-duration: 1050ms;
+}
+
+/* Reset básico para que todo se vea igual en todos los navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Hace que al pulsar en un enlace el scroll sea fluido */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Suaviza el renderizado de las letras en Mac/iOS */
+} 
+
+/* Sistema global de ensamblaje magnético */
+.assembly-item {
+  opacity: 0;
+  transform: translate3d(var(--assembly-x, 0), var(--assembly-distance, 52px), 0)
+    rotate(var(--assembly-rotate, 0deg)) scale(var(--assembly-scale-from, 0.84));
+  transform-origin: center;
+  transition:
+    opacity var(--assembly-duration) var(--assembly-ease),
+    transform var(--assembly-duration) var(--assembly-ease);
+  transition-delay: var(--assembly-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.assembly-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(var(--assembly-scale-to, 1));
+}
+
+.assembly-title {
+  --assembly-delay: 0ms;
+}
+
+.assembly-content {
+  --assembly-delay: 120ms;
+}
+
+/* Tarjetas y bloques con sensación premium (hover suave) */
+.motion-card {
+  transition:
+    transform 0.35s var(--ease-out-soft),
+    box-shadow 0.35s var(--ease-out-soft),
+    border-color 0.35s var(--ease-out-soft),
+    background-color 0.35s var(--ease-out-soft);
+  will-change: transform, box-shadow;
+}
+
+.motion-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-soft-lg);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary,
+.btn-secondary {
+  transition:
+    transform 0.26s var(--ease-soft-bounce),
+    box-shadow 0.26s var(--ease-soft-bounce),
+    background-color 0.18s ease-out,
+    color 0.18s ease-out;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: var(--shadow-soft-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assembly-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
