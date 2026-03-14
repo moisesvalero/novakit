@@ -23,6 +23,7 @@
         title="NovaKit 3D Hero"
       ></iframe>
     </div>
+    <div class="spline-watermark-mask" aria-hidden="true"></div>
   </div>
 
   <div class="hero-inner">
@@ -55,35 +56,38 @@
     position: relative;
     padding: 6rem 1.5rem 5rem;
     background: #ffffff;
-    overflow: hidden;
+    overflow: visible;
     min-height: clamp(700px, 96svh, 940px);
+    isolation: isolate;
   }
 
   .hero-bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    isolation: isolate;
+    z-index: 1;
+    overflow: visible;
+    pointer-events: auto;
   }
 
   .hero-bg-media {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: max(106vw, 1200px);
-    height: max(108vh, 800px);
-    transform: translate(-49%, -49.7%);
-    transform-origin: center;
-    contain: layout paint;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    contain: layout size style;
   }
 
   .hero-bg iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: none;
     display: block;
     pointer-events: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .hero-bg::before {
@@ -98,22 +102,25 @@
   }
 
   .hero-bg::after {
-    content: "";
+    content: none;
+  }
+
+  .spline-watermark-mask {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    width: clamp(138px, 15vw, 248px);
-    height: clamp(44px, 5vw, 84px);
+    right: -4px;
+    bottom: -4px;
+    width: clamp(240px, 26vw, 390px);
+    height: clamp(84px, 10vw, 138px);
     pointer-events: none;
-    z-index: 2;
+    z-index: 5;
     background:
-      linear-gradient(to top, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.72) 55%, transparent),
-      linear-gradient(to left, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.68) 44%, transparent);
+      linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.88) 58%, transparent),
+      linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.84) 44%, transparent);
   }
 
   .hero-inner {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
     max-width: 1200px;
     margin: 0 auto;
@@ -330,14 +337,16 @@
     }
 
     .hero-bg-media {
-      width: max(144vw, 920px);
-      height: max(116vh, 700px);
-      transform: translate(-52%, -49.2%);
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
 
-    .hero-bg::after {
-      width: clamp(120px, 34vw, 190px);
-      height: clamp(40px, 11vw, 70px);
+    .spline-watermark-mask {
+      right: -4px;
+      bottom: -4px;
+      width: clamp(230px, 52vw, 320px);
+      height: clamp(82px, 21vw, 130px);
     }
 
     .hero-bg::before {
@@ -375,9 +384,16 @@
     }
 
     .hero-bg-media {
-      width: max(164vw, 800px);
-      height: max(120vh, 640px);
-      transform: translate(-55%, -49.8%);
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .spline-watermark-mask {
+      right: -6px;
+      bottom: -6px;
+      width: clamp(210px, 62vw, 300px);
+      height: clamp(84px, 25vw, 136px);
     }
   }
 </style>
