@@ -56,7 +56,7 @@
     position: relative;
     padding: 6rem 1.5rem 5rem;
     background: #ffffff;
-    overflow: visible;
+    overflow: hidden;
     min-height: clamp(700px, 96svh, 940px);
     isolation: isolate;
   }
@@ -65,7 +65,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    overflow: visible;
+    overflow: hidden;
     pointer-events: auto;
   }
 
@@ -75,7 +75,6 @@
     width: 100%;
     height: 100%;
     overflow: visible;
-    contain: layout size style;
   }
 
   .hero-bg iframe {
@@ -86,8 +85,7 @@
     border: none;
     display: block;
     pointer-events: auto;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    will-change: transform;
   }
 
   .hero-bg::before {
