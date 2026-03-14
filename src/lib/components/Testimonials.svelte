@@ -366,6 +366,7 @@
   .cta {
     margin-top: 1.5rem;
     padding: 0.9rem 1.8rem;
+    min-height: 44px;
     border-radius: 999px;
     border: none;
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
@@ -484,6 +485,21 @@
 
     .columns {
       grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .testimonials {
+      padding-block: 5.8rem 6.8rem;
+    }
+
+    .header {
+      max-width: 920px;
+    }
+
+    .columns {
+      max-width: 1320px;
+      gap: 1.5rem;
     }
   }
 </style>

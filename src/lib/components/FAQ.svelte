@@ -49,7 +49,7 @@
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5.5vw, 2.5rem);
     text-align: center;
     margin-bottom: 2rem;
     letter-spacing: -0.03em;
@@ -134,6 +134,12 @@
 
   .faq-item.open .arrow {
     transform: rotate(180deg);
+  }
+
+  @media (min-width: 1600px) {
+    .faq-section {
+      max-width: 920px;
+    }
   }
 </style>
 

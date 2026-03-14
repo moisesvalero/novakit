@@ -109,5 +109,17 @@
       justify-content: flex-start;
     }
   }
+
+  @media (min-width: 1600px) {
+    .social-proof {
+      padding-block: 2.5rem 4.5rem;
+    }
+
+    .inner {
+      max-width: 1360px;
+      padding: 1.4rem 2.4rem;
+      gap: 2rem;
+    }
+  }
 </style>
 

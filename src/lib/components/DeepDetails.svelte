@@ -323,5 +323,19 @@
       transform: translateY(-50%);
     }
   }
+
+  @media (min-width: 1600px) {
+    .deep-details {
+      padding-block: 6.2rem 5.6rem;
+    }
+
+    .inner {
+      max-width: 1080px;
+    }
+
+    .marquee {
+      height: 500px;
+    }
+  }
 </style>
 

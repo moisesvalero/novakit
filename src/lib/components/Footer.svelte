@@ -15,13 +15,13 @@
   function worldClock() {
     const d = now;
     const hour = d.getHours();
-    const emoji = hour >= 7 && hour < 20 ? '☀️' : '🌙';
+    const icon = hour >= 7 && hour < 20 ? '☀' : '☾';
     const time = d.toLocaleTimeString('es-ES', {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false
     });
-    return `ALC / ESP — ${time} ${emoji}`;
+    return { time, icon };
   }
 </script>
 
@@ -43,8 +43,9 @@
 
     <div class="side center">
       <div class="status">
-        <span class="status-dot"></span>
-        <span class="status-label">{worldClock()}</span>
+        <span class="status-dot animate-pulse" aria-hidden="true"></span>
+        <span class="status-label">ALC / ESP — {worldClock().time}</span>
+        <span class="status-icon" aria-hidden="true">{worldClock().icon}</span>
       </div>
     </div>
 
@@ -55,7 +56,20 @@
         onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Volver arriba"
       >
-        ↑
+        <svg
+          class="arrow-up"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 19V5" />
+          <path d="m5 12 7-7 7 7" />
+        </svg>
       </button>
       <div class="credits">
         <span>Designed by</span>
@@ -144,35 +158,37 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.45rem 0.9rem;
+    padding: 0.55rem 0.95rem;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.85);
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    background: #000;
+    border: 1px solid #1d1e21;
+    box-shadow: none;
   }
 
   .status-dot {
-    position: relative;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 999px;
-    background: #fbbf24;
+    background: #d08a61;
+    box-shadow: 0 0 0 1px rgba(208, 138, 97, 0.28);
   }
 
-  .status-dot::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.72);
-    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  .animate-pulse {
+    animation: pulse 1.6s ease-in-out infinite;
   }
 
   .status-label {
-    font-size: 0.78rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
+    font-size: clamp(0.78rem, 2.7vw, 0.9rem);
+    font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
     letter-spacing: 0.08em;
-    color: #9ca3af;
+    color: #ddd;
+  }
+
+  .status-icon {
+    font-size: 0.78rem;
+    line-height: 1;
+    color: #888;
   }
 
   .credits {
@@ -206,42 +222,52 @@
   }
 
   .back-to-top {
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.6);
-    background: radial-gradient(circle at top, #111827, #020617);
-    color: #e5e7eb;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    background: #141518;
+    color: #bfc4cf;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    flex-shrink: 0;
     margin-right: 0.9rem;
     cursor: pointer;
-    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.85);
-    transform: translateY(0);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.35);
+    transition: border-color 0.22s ease-out, background-color 0.22s ease-out;
+  }
+
+  .arrow-up {
+    width: 16px;
+    height: 16px;
     transition:
-      transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+      color 0.2s ease-out;
   }
 
   .back-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 55px rgba(15, 23, 42, 0.95);
+    background: #1a1c21;
+    border-color: rgba(148, 163, 184, 0.36);
   }
 
-  @keyframes ping {
+  .back-to-top:hover .arrow-up {
+    transform: translateY(-2px);
+    color: #a78bfa;
+  }
+
+  @keyframes pulse {
     0% {
       transform: scale(1);
-      opacity: 0.9;
+      opacity: 0.72;
     }
-    70% {
-      transform: scale(1.8);
-      opacity: 0;
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
     }
     100% {
-      transform: scale(1.8);
-      opacity: 0;
+      transform: scale(1);
+      opacity: 0.72;
     }
   }
 
@@ -264,10 +290,43 @@
     .footer-inner {
       grid-template-columns: minmax(0, 1fr);
       gap: 1.2rem;
+      text-align: center;
     }
 
+    .side.left,
+    .side.center,
     .side.right {
-      justify-content: space-between;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .status {
+      justify-content: center;
+      width: min(100%, 320px);
+      margin-inline: auto;
+    }
+
+    .brand {
+      justify-content: center;
+    }
+
+    .brand-text {
+      align-items: center;
+    }
+
+    .credits {
+      justify-content: center;
+    }
+
+    .back-to-top {
+      margin-right: 0.6rem;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .footer-inner {
+      max-width: 1360px;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.4fr);
     }
   }
 </style>

@@ -189,5 +189,16 @@
       grid-template-columns: minmax(0, 1fr);
     }
   }
+
+  @media (min-width: 1600px) {
+    .workflow {
+      padding-block: 7rem 5rem;
+    }
+
+    .inner {
+      max-width: 1360px;
+      gap: 4.2rem;
+    }
+  }
 </style>
 

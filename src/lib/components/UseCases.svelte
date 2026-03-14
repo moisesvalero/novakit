@@ -121,5 +121,21 @@
       grid-template-columns: minmax(0, 1fr);
     }
   }
+
+  @media (min-width: 1600px) {
+    .use-cases {
+      padding-block: 5rem 4.8rem;
+    }
+
+    .header {
+      max-width: 840px;
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      max-width: 1320px;
+      gap: 1.5rem;
+    }
+  }
 </style>
 

@@ -31,7 +31,7 @@
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5.6vw, 2.5rem);
     text-align: center;
     margin-bottom: 2rem;
     letter-spacing: -0.03em;
@@ -39,7 +39,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 2rem;
   }
 
@@ -152,6 +152,32 @@
   .feature:global(.is-visible):hover::before {
     opacity: 1;
     transform: rotate(360deg);
+  }
+
+  @media (max-width: 640px) {
+    .features {
+      margin: 3.4rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      gap: 1rem;
+    }
+
+    .feature {
+      padding: 1.3rem 1.1rem;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .features {
+      max-width: 1320px;
+      margin: 5rem auto;
+    }
+
+    .grid {
+      gap: 2.2rem;
+    }
   }
 </style>
 

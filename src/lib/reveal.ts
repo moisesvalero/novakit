@@ -16,7 +16,7 @@ const STAGE_DELAY: Record<RevealStage, number> = {
 function normalizeOptions(value: RevealOptions | undefined) {
   return {
     delay: value?.delay,
-    distance: value?.distance ?? 30,
+    distance: value?.distance ?? 40,
     stage: value?.stage ?? 'content',
     threshold: value?.threshold ?? 0.24,
     rootMargin: value?.rootMargin ?? '0px 0px -8% 0px'

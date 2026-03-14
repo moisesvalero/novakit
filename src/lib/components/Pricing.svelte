@@ -43,7 +43,7 @@
         <li>✓ Acceso a layouts base</li>
         <li>✓ Actualizaciones mensuales</li>
       </ul>
-      <a href="#buy" class="btn-primary full-width">Start with Starter</a>
+      <button type="button" class="btn-primary full-width">Start with Starter</button>
     </div>
 
     <div class="price-card featured" use:reveal={{ stage: 'content', delay: 230 }}>
@@ -61,7 +61,7 @@
         <li>✓ Premium Components</li>
         <li>✓ 24/7 Priority Support</li>
       </ul>
-      <a href="#buy" class="btn-primary full-width">Get Pro</a>
+      <button type="button" class="btn-primary full-width">Get Pro</button>
     </div>
 
     <div class="price-card" use:reveal={{ stage: 'content', delay: 190 }}>
@@ -79,7 +79,7 @@
         <li>✓ Design tokens compartidos</li>
         <li>✓ Soporte prioritario dedicado</li>
       </ul>
-      <a href="#buy" class="btn-primary full-width">Talk to sales</a>
+      <button type="button" class="btn-primary full-width">Talk to sales</button>
     </div>
   </div>
 </section>
@@ -91,7 +91,7 @@
   }
 
   .pricing-header h2 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     letter-spacing: -0.04em;
     margin-bottom: 1rem;
   }
@@ -125,8 +125,9 @@
   }
 
   .toggle-btn {
-    width: 50px;
-    height: 26px;
+    width: 58px;
+    height: 34px;
+    min-height: 44px;
     background: var(--text-main);
     border-radius: 50px;
     border: none;
@@ -138,15 +139,15 @@
   }
 
   .toggle-circle {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     background: white;
     border-radius: 50%;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .toggle-circle.yearly {
-    transform: translateX(24px);
+    transform: translateX(26px);
   }
 
   .pricing-grid {
@@ -155,6 +156,8 @@
     gap: 1.5rem;
     margin-top: 4rem;
     align-items: stretch;
+    max-width: 1280px;
+    margin-inline: auto;
   }
 
   .price-card {
@@ -163,6 +166,8 @@
     padding: 3rem;
     border-radius: 32px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
     transition:
       opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
       transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -200,6 +205,18 @@
     animation: pro-glow 5s ease-in-out infinite alternate;
   }
 
+  .plan-info {
+    min-height: 124px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 0.7rem;
+  }
+
+  .plan-info p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
   .price-display {
     margin: 2rem 0;
     font-size: 4rem;
@@ -213,7 +230,6 @@
     color: var(--text-secondary);
   }
 
-  .price-display .period {
   /* Efecto blur-fade al cambiar precios */
   .price-display .amount,
   .price-display .period {
@@ -238,6 +254,7 @@
     filter: blur(0);
   }
 
+  .price-display .period {
     font-size: 1.25rem;
     font-weight: 400;
     color: var(--text-secondary);
@@ -255,10 +272,21 @@
   }
 
   .full-width {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
   /* Botones con desplazamiento de gradiente interno al hover */
   .price-card .btn-primary {
     background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 50%, var(--accent) 100%);
     background-size: 200% 100%;
+    color: #fff;
+    border-radius: 14px;
+    padding: 0.95rem 1.2rem;
+    margin-top: auto;
+    -webkit-appearance: none;
+    appearance: none;
     transition:
       background-position 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
       transform 0.26s var(--ease-soft-bounce),
@@ -280,10 +308,6 @@
       opacity: 0.2;
     }
   }
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
 
   @media (max-width: 900px) {
     .pricing-grid {
@@ -292,8 +316,38 @@
   }
 
   @media (max-width: 640px) {
+    .pricing {
+      padding: 4.5rem 1rem;
+    }
+
+    .toggle-container {
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+      padding: 2rem 1.2rem;
+    }
+
+    .plan-info {
+      min-height: auto;
+    }
+
     .pricing-grid {
       grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .pricing {
+      padding-block: 7rem;
+      max-width: 1440px;
+      margin-inline: auto;
+    }
+
+    .pricing-grid {
+      max-width: 1360px;
+      gap: 1.8rem;
     }
   }
 </style>

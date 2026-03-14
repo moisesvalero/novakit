@@ -284,5 +284,25 @@
       grid-template-columns: minmax(0, 1fr);
     }
   }
+
+  @media (min-width: 1600px) {
+    .superpowers {
+      padding-block: 5.8rem 5rem;
+    }
+
+    .layout {
+      max-width: 1320px;
+      gap: 3rem;
+    }
+
+    .device-frame {
+      width: 290px;
+      height: 460px;
+    }
+
+    .grid {
+      gap: 1.4rem;
+    }
+  }
 </style>
 

@@ -18,7 +18,9 @@
   --shadow-soft-md: 0 14px 35px rgba(15, 23, 42, 0.12);
   --ring-soft: 0 0 0 1px rgba(148, 163, 184, 0.18);
   --assembly-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --assembly-duration: 1050ms;
+  --assembly-duration: 1260ms;
+  --btn-shine-duration: 0.55s;
+  --btn-shine-opacity-duration: 0.3s;
 }
 
 /* Reset básico para que todo se vea igual en todos los navegadores */
@@ -30,6 +32,7 @@
 
 html {
   scroll-behavior: smooth; /* Hace que al pulsar en un enlace el scroll sea fluido */
+  overflow-x: clip;
 }
 
 body {
@@ -38,13 +41,14 @@ body {
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased; /* Suaviza el renderizado de las letras en Mac/iOS */
+  overflow-x: clip;
 } 
 
 /* Sistema global de ensamblaje magnético */
 .assembly-item {
   opacity: 0;
-  transform: translate3d(var(--assembly-x, 0), var(--assembly-distance, 52px), 0)
-    rotate(var(--assembly-rotate, 0deg)) scale(var(--assembly-scale-from, 0.84));
+  transform: translate3d(var(--assembly-x, 0), var(--assembly-distance, 64px), 0)
+    rotate(var(--assembly-rotate, 0deg)) scale(var(--assembly-scale-from, 0.76));
   transform-origin: center;
   transition:
     opacity var(--assembly-duration) var(--assembly-ease),
@@ -77,13 +81,23 @@ body {
 }
 
 .motion-card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-10px) scale(1.028);
   box-shadow: var(--shadow-soft-lg);
   border-color: rgba(99, 102, 241, 0.4);
 }
 
 .btn-primary,
 .btn-secondary {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   transition:
     transform 0.26s var(--ease-soft-bounce),
     box-shadow 0.26s var(--ease-soft-bounce),
@@ -91,10 +105,54 @@ body {
     color 0.18s ease-out;
 }
 
+.cta,
+.back-to-top {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-primary::before,
+.btn-secondary::before,
+.toggle-btn::before,
+.cta::before,
+.back-to-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 18%,
+    rgba(255, 255, 255, 0.38) 46%,
+    rgba(255, 255, 255, 0.04) 62%,
+    transparent 78%
+  );
+  opacity: 0.7;
+  transform: translateX(-120%);
+  transition:
+    transform var(--btn-shine-duration) ease,
+    opacity var(--btn-shine-opacity-duration) ease;
+  pointer-events: none;
+}
+
 .btn-primary:hover,
 .btn-secondary:hover {
-  transform: translateY(-1px) scale(1.01);
+  transform: translateY(-2.5px) scale(1.02);
   box-shadow: var(--shadow-soft-md);
+}
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before,
+.toggle-btn:hover::before,
+.cta:hover::before,
+.back-to-top:hover::before,
+.btn-primary:focus-visible::before,
+.btn-secondary:focus-visible::before,
+.toggle-btn:focus-visible::before,
+.cta:focus-visible::before,
+.back-to-top:focus-visible::before {
+  opacity: 1;
+  transform: translateX(120%);
 }
 
 @media (prefers-reduced-motion: reduce) {
