@@ -87,7 +87,7 @@
 
 <style>
   .pricing {
-    padding: 6rem 1.5rem;
+    padding: 120px 1.5rem;
     text-align: center;
   }
 
@@ -316,9 +316,16 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .pricing {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
   @media (max-width: 640px) {
     .pricing {
-      padding: 4.5rem 1rem;
+      padding: 80px 1rem;
     }
 
     .toggle-container {
@@ -341,7 +348,7 @@
 
   @media (min-width: 1600px) {
     .pricing {
-      padding-block: 7rem;
+      padding-block: 120px;
       max-width: 1440px;
       margin-inline: auto;
     }

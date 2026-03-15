@@ -57,7 +57,7 @@
 
 <style>
   .social-proof {
-    padding: 2rem 1.5rem 4rem;
+    padding: 120px 1.5rem 120px;
   }
 
   .inner {
@@ -154,9 +154,16 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .social-proof {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
   @media (min-width: 1600px) {
     .social-proof {
-      padding-block: 2.5rem 4.5rem;
+      padding-block: 120px;
     }
 
     .inner {

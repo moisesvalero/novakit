@@ -37,16 +37,17 @@
   },
   "workflow": {
     "eyebrow": "How NovaKit fits your flow",
-    "title": "From wireframe to polished interface in hours, not weeks.",
-    "subtitle": "Combine ready-made blocks, tweak tokens, and ship product-ready UI kits without drowning in Figma files or CSS refactors.",
-    "steps": {
-      "designTitle": "Design",
-      "designDesc": "Define UI blocks, spacing, and style tokens.",
-      "buildTitle": "Build",
-      "buildDesc": "Compose reusable components directly in Svelte.",
-      "shipTitle": "Ship",
-      "shipDesc": "Launch polished screens with ready-to-use motion."
-    }
+    "title": "From wireframe to <span class='gradient-text'>polished interface</span><br>in hours, not weeks.",
+    "subtitle": "Combine ready-made blocks, tweak tokens, and ship product-ready UI kits without drowning in Figma files.",
+    "step1_num": "01 — DESIGN",
+    "step1_title": "Define your UI blocks",
+    "step1_desc": "Pick spacing, style tokens and layout patterns from a curated design system.",
+    "step2_num": "02 — BUILD",
+    "step2_title": "Compose in Svelte",
+    "step2_desc": "Drop reusable components directly into your project. No config hell.",
+    "step3_num": "03 — SHIP",
+    "step3_title": "Launch polished screens",
+    "step3_desc": "Deploy pixel-perfect interfaces with ready-to-use motion and interactions."
   },
   "componentGallery": {
     "eyebrow": "A KIT, NOT JUST A TEMPLATE",

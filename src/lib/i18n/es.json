@@ -40,17 +40,18 @@
     }
   },
   "workflow": {
-    "eyebrow": "Cómo NovaKit encaja en tu flujo",
-    "title": "De wireframe a interfaz pulida en horas, no en semanas.",
-    "subtitle": "Combina bloques listos para usar, ajusta tokens y entrega kits de UI listos para producción sin ahogarte entre archivos de Figma o refactors de CSS.",
-    "steps": {
-      "designTitle": "Diseña",
-      "designDesc": "Define bloques de UI, espaciado y tokens visuales.",
-      "buildTitle": "Construye",
-      "buildDesc": "Compone componentes reutilizables directamente en Svelte.",
-      "shipTitle": "Lanza",
-      "shipDesc": "Publica pantallas pulidas con motion listo para usar."
-    }
+    "eyebrow": "Cómo encaja NovaKit en tu flujo",
+    "title": "De wireframe a <span class='gradient-text'>interfaz pulida</span><br>en horas, no semanas.",
+    "subtitle": "Combina bloques listos, ajusta tokens y lanza kits de UI sin ahogarte en archivos de Figma.",
+    "step1_num": "01 — DISEÑO",
+    "step1_title": "Define tus bloques UI",
+    "step1_desc": "Elige espaciado, tokens de estilo y patrones de layout de un sistema de diseño curado.",
+    "step2_num": "02 — CONSTRUCCIÓN",
+    "step2_title": "Compón en Svelte",
+    "step2_desc": "Añade componentes reutilizables directamente a tu proyecto. Sin complicaciones.",
+    "step3_num": "03 — LANZAMIENTO",
+    "step3_title": "Lanza pantallas pulidas",
+    "step3_desc": "Despliega interfaces perfectas al píxel con motion e interacciones listas para usar."
   },
   "componentGallery": {
     "eyebrow": "UN KIT, NO SOLO UNA PLANTILLA",

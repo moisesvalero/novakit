@@ -42,7 +42,7 @@
 
 <style>
   .use-cases {
-    padding: 4.5rem 1.5rem 4rem;
+    padding: 120px 1.5rem 120px;
     background-color: var(--bg-soft);
   }
 
@@ -113,6 +113,13 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .use-cases {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
   @media (max-width: 640px) {
     .grid {
       grid-template-columns: minmax(0, 1fr);
@@ -121,7 +128,7 @@
 
   @media (min-width: 1600px) {
     .use-cases {
-      padding-block: 5rem 4.8rem;
+      padding-block: 120px;
     }
 
     .header {

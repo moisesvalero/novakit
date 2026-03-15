@@ -5,7 +5,7 @@
 
 <section id="features" class="features">
   <div class="features-head" use:reveal={{ stage: 'title' }}>
-    <h2 class="title">{$t('features.title')}</h2>
+    <h2 class="title">Designed for <span class="gradient-text">Modern Interfaces</span></h2>
     <p class="subtitle">
       {$t('features.subtitle')}
     </p>
@@ -174,6 +174,13 @@
     line-height: 1.08;
     letter-spacing: -0.03em;
     margin: 0 0 1rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #7c5cbf, #4f8ef7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .subtitle {

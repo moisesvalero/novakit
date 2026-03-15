@@ -145,7 +145,7 @@
 
 <style>
   .deep-details {
-    padding: 5.5rem 1.5rem 5rem;
+    padding: 120px 1.5rem 120px;
     background: radial-gradient(circle at top, rgba(99, 102, 241, 0.06), #ffffff 55%);
     color: var(--text-main);
   }
@@ -325,6 +325,11 @@
   }
 
   @media (max-width: 768px) {
+    .deep-details {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
     .tag {
       display: none;
     }
@@ -332,7 +337,7 @@
 
   @media (min-width: 1600px) {
     .deep-details {
-      padding-block: 6.2rem 5.6rem;
+      padding-block: 120px;
     }
 
     .inner {

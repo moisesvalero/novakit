@@ -362,7 +362,7 @@
 
 <style>
   .testimonials {
-    padding: 5rem 1.5rem 6rem;
+    padding: 120px 1.5rem 120px;
     background: radial-gradient(circle at top, rgba(99, 102, 241, 0.06), transparent 55%);
     position: relative;
   }
@@ -555,10 +555,17 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .testimonials {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
   @media (max-width: 640px) {
     .testimonials {
       padding-inline: 1.25rem;
-      padding-bottom: 4.2rem;
+      padding-bottom: 80px;
     }
 
     .columns {
@@ -583,7 +590,7 @@
 
   @media (min-width: 1600px) {
     .testimonials {
-      padding-block: 5.8rem 6.8rem;
+      padding-block: 120px;
     }
 
     .header {

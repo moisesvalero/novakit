@@ -63,7 +63,7 @@
 
 <style>
   .superpowers {
-    padding: 5rem 1.5rem 4.5rem;
+    padding: 120px 1.5rem 120px;
     background: radial-gradient(circle at top, rgba(99, 102, 241, 0.04), transparent 60%);
   }
 
@@ -248,6 +248,13 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .superpowers {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
   @media (max-width: 640px) {
     .grid {
       grid-template-columns: minmax(0, 1fr);
@@ -256,7 +263,7 @@
 
   @media (min-width: 1600px) {
     .superpowers {
-      padding-block: 5.8rem 5rem;
+      padding-block: 120px;
     }
 
     .layout {

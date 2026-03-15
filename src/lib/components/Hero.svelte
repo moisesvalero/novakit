@@ -45,7 +45,7 @@
       </div>
       <h1 class="hero-assemble hero-title">
         {$t('hero.titleLine1')}<br />
-        <span>{$t('hero.titleLine2')}</span>
+        <span class="gradient-text">Modern Web Apps</span>
       </h1>
       <p class="subtitle hero-assemble hero-subtitle">
         {$t('hero.subtitle')}
@@ -65,7 +65,7 @@
 <style>
   .hero {
     position: relative;
-    padding: 6rem 1.5rem 5rem;
+    padding: 120px 1.5rem 120px;
     background: #ffffff;
     overflow: hidden;
     min-height: clamp(700px, 96svh, 940px);
@@ -267,6 +267,13 @@
     font-weight: 400;
   }
 
+  .gradient-text {
+    background: linear-gradient(135deg, #7c5cbf, #4f8ef7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .subtitle {
     font-size: 1.1rem;
     color: var(--text-secondary);
@@ -350,7 +357,7 @@
 
   @media (max-width: 900px) {
     .hero {
-      padding: 4rem 1.25rem 4.25rem;
+      padding: 120px 1.25rem 120px;
       min-height: clamp(760px, 100svh, 940px);
     }
 
@@ -400,6 +407,18 @@
       max-width: 100%;
     }
 
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .actions {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   @media (max-width: 640px) {

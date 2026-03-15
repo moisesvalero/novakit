@@ -6,13 +6,16 @@
   onMount(() => {
     if (!screenEl) return;
     const scale = screenEl.offsetWidth / 390;
+    const safariUiEl = screenEl.querySelector('.safari-ui');
+    const safariUiHeight = safariUiEl instanceof HTMLElement ? safariUiEl.offsetHeight : 52;
     /** @type {HTMLIFrameElement | null} */
     const iframe = screenEl.querySelector('iframe');
     if (!iframe) return;
     iframe.style.transform = `scale(${scale})`;
     iframe.style.transformOrigin = 'top left';
+    iframe.style.top = `${safariUiHeight}px`;
     iframe.style.width = '390px';
-    iframe.style.height = `${screenEl.offsetHeight / scale}px`;
+    iframe.style.height = `${(screenEl.offsetHeight - safariUiHeight) / scale}px`;
     iframe.style.border = 'none';
   });
 </script>
@@ -26,6 +29,24 @@
       <div class="btn-power"></div>
       <div class="screen-bezel">
         <div class="screen-inner" bind:this={screenEl}>
+          <div class="safari-ui">
+            <div class="safari-status-row">
+              <span class="safari-time">9:41</span>
+              <div class="safari-status-icons">
+                <span class="safari-signal"></span>
+                <span class="safari-wifi"></span>
+                <span class="safari-battery"></span>
+              </div>
+            </div>
+            <div class="safari-address-row">
+              <button class="safari-nav-btn" aria-label="Go back">‹</button>
+              <div class="safari-address-pill">
+                <span class="safari-lock"></span>
+                <span class="safari-domain">novakit.vercel.app</span>
+              </div>
+              <button class="safari-nav-btn" aria-label="Share page">⋯</button>
+            </div>
+          </div>
           <iframe src="/" scrolling="auto" title="Mobile preview"></iframe>
           <div class="screen-shine"></div>
         </div>
@@ -90,6 +111,119 @@
     overflow: hidden;
     background: #fff;
     overscroll-behavior: contain;
+  }
+
+  .safari-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 8;
+    padding: 8px 10px 7px;
+    background: linear-gradient(180deg, rgba(249, 250, 255, 0.98), rgba(244, 246, 255, 0.95));
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .safari-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-family: -apple-system, sans-serif;
+  }
+
+  .safari-time {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.01em;
+  }
+
+  .safari-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .safari-signal,
+  .safari-wifi,
+  .safari-battery {
+    display: inline-block;
+    height: 7px;
+    border-radius: 2px;
+    background: rgba(15, 23, 42, 0.85);
+  }
+
+  .safari-signal { width: 7px; }
+  .safari-wifi { width: 10px; opacity: 0.8; }
+  .safari-battery { width: 12px; opacity: 0.9; }
+
+  .safari-address-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .safari-nav-btn {
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(124, 92, 191, 0.12);
+    color: #5b3ea8;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .safari-address-pill {
+    flex: 1;
+    min-width: 0;
+    height: 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 8px;
+    font-family: -apple-system, sans-serif;
+    color: #475569;
+  }
+
+  .safari-lock {
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    border: 1.4px solid #64748b;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .safari-lock::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 1px;
+    width: 3px;
+    height: 4px;
+    border: 1.4px solid #64748b;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .safari-domain {
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .screen-inner iframe {

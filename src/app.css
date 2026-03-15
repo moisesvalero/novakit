@@ -44,6 +44,13 @@ body {
   overflow-x: clip;
 } 
 
+.gradient-text {
+  background: linear-gradient(135deg, #7c5cbf, #4f8ef7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Sistema global de ensamblaje magnético */
 .assembly-item {
   opacity: 0;
