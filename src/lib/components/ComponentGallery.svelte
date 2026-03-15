@@ -1,5 +1,6 @@
 <script>
 import { onMount } from 'svelte';
+import { t } from '$lib/i18n/index.js';
 
 onMount(() => {
   const cards = document.querySelectorAll('.gallery .card');
@@ -26,11 +27,11 @@ onMount(() => {
   <div class="card">
     <div class="card-preview">
       <div class="ui1">
-        <div class="ui1-header"><span class="ui1-title">Analytics Dashboard</span><span class="ui1-badge">Live</span></div>
+        <div class="ui1-header"><span class="ui1-title">{$t('componentGallery.ui1.title')}</span><span class="ui1-badge">{$t('componentGallery.ui1.live')}</span></div>
         <div class="ui1-stats">
-          <div class="ui1-stat"><div class="ui1-stat-val">24.5k</div><div class="ui1-stat-label">Users</div></div>
-          <div class="ui1-stat"><div class="ui1-stat-val">$8.2k</div><div class="ui1-stat-label">Revenue</div></div>
-          <div class="ui1-stat"><div class="ui1-stat-val">94%</div><div class="ui1-stat-label">Uptime</div></div>
+          <div class="ui1-stat"><div class="ui1-stat-val">24.5k</div><div class="ui1-stat-label">{$t('componentGallery.ui1.users')}</div></div>
+          <div class="ui1-stat"><div class="ui1-stat-val">$8.2k</div><div class="ui1-stat-label">{$t('componentGallery.ui1.revenue')}</div></div>
+          <div class="ui1-stat"><div class="ui1-stat-val">94%</div><div class="ui1-stat-label">{$t('componentGallery.ui1.uptime')}</div></div>
         </div>
         <div class="ui1-chart">
           <div class="ui1-bars">
@@ -42,51 +43,51 @@ onMount(() => {
             <div class="ui1-bar" style="height:90%;background:#7c5cbf;"></div>
             <div class="ui1-bar" style="height:70%;background:#b8a9f5;"></div>
           </div>
-          <div class="ui1-chart-label"><span class="ui1-chart-lbl">Mon</span><span class="ui1-chart-lbl">Tue</span><span class="ui1-chart-lbl">Wed</span><span class="ui1-chart-lbl">Thu</span><span class="ui1-chart-lbl">Fri</span><span class="ui1-chart-lbl">Sat</span><span class="ui1-chart-lbl">Sun</span></div>
+          <div class="ui1-chart-label"><span class="ui1-chart-lbl">{$t('componentGallery.ui1.dayMon')}</span><span class="ui1-chart-lbl">{$t('componentGallery.ui1.dayTue')}</span><span class="ui1-chart-lbl">{$t('componentGallery.ui1.dayWed')}</span><span class="ui1-chart-lbl">{$t('componentGallery.ui1.dayThu')}</span><span class="ui1-chart-lbl">{$t('componentGallery.ui1.dayFri')}</span><span class="ui1-chart-lbl">{$t('componentGallery.ui1.daySat')}</span><span class="ui1-chart-lbl">{$t('componentGallery.ui1.daySun')}</span></div>
         </div>
       </div>
     </div>
-    <div class="card-footer"><span class="card-title">Dashboard Overview</span><span class="card-tag">Layout</span></div>
+    <div class="card-footer"><span class="card-title">{$t('componentGallery.cards.dashboardTitle')}</span><span class="card-tag">{$t('componentGallery.cards.dashboardTag')}</span></div>
   </div>
 
   <div class="card">
     <div class="card-preview">
       <div class="ui2">
-        <div class="ui2-header"><span class="ui2-title">Product Catalog</span><div class="ui2-cart"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M1 1h2l1.5 6h5l1-4H3.5" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/><circle cx="5.5" cy="10" r="1" fill="#fff"/><circle cx="9.5" cy="10" r="1" fill="#fff"/></svg></div></div>
+        <div class="ui2-header"><span class="ui2-title">{$t('componentGallery.ui2.title')}</span><div class="ui2-cart"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M1 1h2l1.5 6h5l1-4H3.5" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/><circle cx="5.5" cy="10" r="1" fill="#fff"/><circle cx="9.5" cy="10" r="1" fill="#fff"/></svg></div></div>
         <div class="ui2-grid">
-          <div class="ui2-item"><div class="ui2-img" style="background:#f0e6ff;"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="6" y="8" width="16" height="12" rx="3" fill="#7c5cbf" opacity="0.3"/><rect x="9" y="11" width="10" height="6" rx="1.5" fill="#7c5cbf"/></svg></div><div class="ui2-info"><div class="ui2-name">UI Kit Pro</div><div class="ui2-price">$49</div></div></div>
-          <div class="ui2-item"><div class="ui2-img" style="background:#e6f0ff;"><svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="7" fill="#2563eb" opacity="0.2"/><circle cx="14" cy="14" r="4" fill="#2563eb"/></svg></div><div class="ui2-info"><div class="ui2-name">Icon Set</div><div class="ui2-price">$24</div></div></div>
-          <div class="ui2-item"><div class="ui2-img" style="background:#e6fff0;"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M8 14l4 4 8-8" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ui2-info"><div class="ui2-name">Forms</div><div class="ui2-price">Free</div></div></div>
+          <div class="ui2-item"><div class="ui2-img" style="background:#f0e6ff;"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="6" y="8" width="16" height="12" rx="3" fill="#7c5cbf" opacity="0.3"/><rect x="9" y="11" width="10" height="6" rx="1.5" fill="#7c5cbf"/></svg></div><div class="ui2-info"><div class="ui2-name">{$t('componentGallery.ui2.item1')}</div><div class="ui2-price">$49</div></div></div>
+          <div class="ui2-item"><div class="ui2-img" style="background:#e6f0ff;"><svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="7" fill="#2563eb" opacity="0.2"/><circle cx="14" cy="14" r="4" fill="#2563eb"/></svg></div><div class="ui2-info"><div class="ui2-name">{$t('componentGallery.ui2.item2')}</div><div class="ui2-price">$24</div></div></div>
+          <div class="ui2-item"><div class="ui2-img" style="background:#e6fff0;"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M8 14l4 4 8-8" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ui2-info"><div class="ui2-name">{$t('componentGallery.ui2.item3')}</div><div class="ui2-price">{$t('componentGallery.ui2.free')}</div></div></div>
         </div>
         <div class="ui2-tag-row">
-          <div class="ui2-tag" style="background:#f0e6ff;color:#7c5cbf;">New</div>
-          <div class="ui2-tag" style="background:#fff0e6;color:#f97316;">Sale</div>
-          <div class="ui2-tag" style="background:#e6fff0;color:#34c759;">Free</div>
+          <div class="ui2-tag" style="background:#f0e6ff;color:#7c5cbf;">{$t('componentGallery.ui2.new')}</div>
+          <div class="ui2-tag" style="background:#fff0e6;color:#f97316;">{$t('componentGallery.ui2.sale')}</div>
+          <div class="ui2-tag" style="background:#e6fff0;color:#34c759;">{$t('componentGallery.ui2.free')}</div>
         </div>
-        <button class="ui2-btn">Add to cart</button>
+        <button class="ui2-btn">{$t('componentGallery.ui2.addToCart')}</button>
       </div>
     </div>
-    <div class="card-footer"><span class="card-title">Product Highlights</span><span class="card-tag">Commerce</span></div>
+    <div class="card-footer"><span class="card-title">{$t('componentGallery.cards.productTitle')}</span><span class="card-tag">{$t('componentGallery.cards.productTag')}</span></div>
   </div>
 
   <div class="card">
     <div class="card-preview">
       <div class="ui3">
-        <div class="ui3-title">Choose your plan</div>
+        <div class="ui3-title">{$t('componentGallery.ui3.title')}</div>
         <div class="ui3-toggle-row">
-          <span class="ui3-toggle-label">Monthly</span>
+          <span class="ui3-toggle-label">{$t('componentGallery.ui3.monthly')}</span>
           <div class="ui3-toggle-track"><div class="ui3-toggle-thumb"></div></div>
-          <span class="ui3-toggle-label active">Annual</span>
+          <span class="ui3-toggle-label active">{$t('componentGallery.ui3.annual')}</span>
           <span style="font-size:8px;background:#e6fff0;color:#34c759;padding:1px 5px;border-radius:4px;font-family:-apple-system,sans-serif;font-weight:600;">-20%</span>
         </div>
         <div class="ui3-cards">
-          <div class="ui3-card"><div class="ui3-plan">Starter</div><div class="ui3-price">$0</div><div class="ui3-period">/ month</div><div class="ui3-features"><div class="ui3-feat"><div class="ui3-check"></div>5 components</div><div class="ui3-feat"><div class="ui3-check"></div>Basic support</div></div><button class="ui3-btn">Get started</button></div>
-          <div class="ui3-card featured"><div class="ui3-plan">Pro</div><div class="ui3-price">$49</div><div class="ui3-period">/ month</div><div class="ui3-features"><div class="ui3-feat"><div class="ui3-check"></div>All components</div><div class="ui3-feat"><div class="ui3-check"></div>Priority support</div><div class="ui3-feat"><div class="ui3-check"></div>Updates</div></div><button class="ui3-btn">Get Pro</button></div>
-          <div class="ui3-card"><div class="ui3-plan">Team</div><div class="ui3-price">$99</div><div class="ui3-period">/ month</div><div class="ui3-features"><div class="ui3-feat"><div class="ui3-check"></div>Unlimited</div><div class="ui3-feat"><div class="ui3-check"></div>Team access</div></div><button class="ui3-btn">Contact</button></div>
+          <div class="ui3-card"><div class="ui3-plan">{$t('componentGallery.ui3.starter')}</div><div class="ui3-price">$0</div><div class="ui3-period">{$t('componentGallery.ui3.perMonth')}</div><div class="ui3-features"><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.starterFeat1')}</div><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.starterFeat2')}</div></div><button class="ui3-btn">{$t('componentGallery.ui3.starterBtn')}</button></div>
+          <div class="ui3-card featured"><div class="ui3-plan">{$t('componentGallery.ui3.pro')}</div><div class="ui3-price">$49</div><div class="ui3-period">{$t('componentGallery.ui3.perMonth')}</div><div class="ui3-features"><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.proFeat1')}</div><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.proFeat2')}</div><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.proFeat3')}</div></div><button class="ui3-btn">{$t('componentGallery.ui3.proBtn')}</button></div>
+          <div class="ui3-card"><div class="ui3-plan">{$t('componentGallery.ui3.team')}</div><div class="ui3-price">$99</div><div class="ui3-period">{$t('componentGallery.ui3.perMonth')}</div><div class="ui3-features"><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.teamFeat1')}</div><div class="ui3-feat"><div class="ui3-check"></div>{$t('componentGallery.ui3.teamFeat2')}</div></div><button class="ui3-btn">{$t('componentGallery.ui3.teamBtn')}</button></div>
         </div>
       </div>
     </div>
-    <div class="card-footer"><span class="card-title">Pricing Module</span><span class="card-tag">Commerce</span></div>
+    <div class="card-footer"><span class="card-title">{$t('componentGallery.cards.pricingTitle')}</span><span class="card-tag">{$t('componentGallery.cards.pricingTag')}</span></div>
   </div>
 
   <div class="card">
@@ -94,24 +95,24 @@ onMount(() => {
       <div class="ui4">
         <div class="ui4-header">
           <div class="ui4-avatar"></div>
-          <div><div class="ui4-name">Sarah Design</div><div class="ui4-status"><span class="ui4-dot"></span>Online</div></div>
+          <div><div class="ui4-name">{$t('componentGallery.ui4.name')}</div><div class="ui4-status"><span class="ui4-dot"></span>{$t('componentGallery.ui4.online')}</div></div>
         </div>
         <div class="ui4-msgs">
-          <div class="ui4-msg"><div class="ui4-msg-av" style="background:linear-gradient(135deg,#7c5cbf,#a78bfa);"></div><div class="ui4-bubble them">Hey! The new components look amazing 🎉</div></div>
-          <div class="ui4-msg mine"><div class="ui4-msg-av" style="background:linear-gradient(135deg,#2563eb,#60a5fa);"></div><div class="ui4-bubble me">Thanks! Just pushed the update ✨</div></div>
+          <div class="ui4-msg"><div class="ui4-msg-av" style="background:linear-gradient(135deg,#7c5cbf,#a78bfa);"></div><div class="ui4-bubble them">{$t('componentGallery.ui4.msg1')}</div></div>
+          <div class="ui4-msg mine"><div class="ui4-msg-av" style="background:linear-gradient(135deg,#2563eb,#60a5fa);"></div><div class="ui4-bubble me">{$t('componentGallery.ui4.msg2')}</div></div>
           <div class="ui4-typing"><div class="ui4-msg-av" style="background:linear-gradient(135deg,#7c5cbf,#a78bfa);"></div><div class="ui4-typing-bubble"><div class="ui4-typing-dot"></div><div class="ui4-typing-dot"></div><div class="ui4-typing-dot"></div></div></div>
         </div>
-        <div class="ui4-input"><span>Type a message...</span><div class="ui4-send"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 4h6M4 1l3 3-3 3" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
+        <div class="ui4-input"><span>{$t('componentGallery.ui4.placeholder')}</span><div class="ui4-send"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 4h6M4 1l3 3-3 3" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
       </div>
     </div>
-    <div class="card-footer"><span class="card-title">Messaging UI</span><span class="card-tag">Navigation</span></div>
+    <div class="card-footer"><span class="card-title">{$t('componentGallery.cards.messagingTitle')}</span><span class="card-tag">{$t('componentGallery.cards.messagingTag')}</span></div>
   </div>
 
   <div class="card">
     <div class="card-preview">
       <div class="ui5">
-        <div class="ui5-header"><span class="ui5-month">March 2026</span><div class="ui5-nav"><div class="ui5-navbtn"><svg width="6" height="8" viewBox="0 0 6 8"><path d="M5 1L1 4l4 3" fill="none" stroke="#8e8e93" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="ui5-navbtn"><svg width="6" height="8" viewBox="0 0 6 8"><path d="M1 1l4 3-4 3" fill="none" stroke="#8e8e93" stroke-width="1.2" stroke-linecap="round"/></svg></div></div></div>
-        <div class="ui5-days-header"><div class="ui5-day-lbl">S</div><div class="ui5-day-lbl">M</div><div class="ui5-day-lbl">T</div><div class="ui5-day-lbl">W</div><div class="ui5-day-lbl">T</div><div class="ui5-day-lbl">F</div><div class="ui5-day-lbl">S</div></div>
+        <div class="ui5-header"><span class="ui5-month">{$t('componentGallery.ui5.month')}</span><div class="ui5-nav"><div class="ui5-navbtn"><svg width="6" height="8" viewBox="0 0 6 8"><path d="M5 1L1 4l4 3" fill="none" stroke="#8e8e93" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="ui5-navbtn"><svg width="6" height="8" viewBox="0 0 6 8"><path d="M1 1l4 3-4 3" fill="none" stroke="#8e8e93" stroke-width="1.2" stroke-linecap="round"/></svg></div></div></div>
+        <div class="ui5-days-header"><div class="ui5-day-lbl">{$t('componentGallery.ui5.day1')}</div><div class="ui5-day-lbl">{$t('componentGallery.ui5.day2')}</div><div class="ui5-day-lbl">{$t('componentGallery.ui5.day3')}</div><div class="ui5-day-lbl">{$t('componentGallery.ui5.day4')}</div><div class="ui5-day-lbl">{$t('componentGallery.ui5.day5')}</div><div class="ui5-day-lbl">{$t('componentGallery.ui5.day6')}</div><div class="ui5-day-lbl">{$t('componentGallery.ui5.day7')}</div></div>
         <div class="ui5-days">
           <div class="ui5-day other">23</div><div class="ui5-day other">24</div><div class="ui5-day other">25</div><div class="ui5-day other">26</div><div class="ui5-day other">27</div><div class="ui5-day other">28</div><div class="ui5-day">1</div>
           <div class="ui5-day">2</div><div class="ui5-day has-event">3</div><div class="ui5-day">4</div><div class="ui5-day">5</div><div class="ui5-day has-event">6</div><div class="ui5-day">7</div><div class="ui5-day">8</div>
@@ -119,30 +120,30 @@ onMount(() => {
           <div class="ui5-day">16</div><div class="ui5-day">17</div><div class="ui5-day has-event">18</div><div class="ui5-day">19</div><div class="ui5-day">20</div><div class="ui5-day">21</div><div class="ui5-day">22</div>
         </div>
         <div class="ui5-events">
-          <div class="ui5-event"><div class="ui5-event-dot" style="background:#7c5cbf;"></div><span class="ui5-event-name">Design Review</span><span class="ui5-event-time">10:00 AM</span></div>
-          <div class="ui5-event"><div class="ui5-event-dot" style="background:#2563eb;"></div><span class="ui5-event-name">Team Standup</span><span class="ui5-event-time">2:00 PM</span></div>
+          <div class="ui5-event"><div class="ui5-event-dot" style="background:#7c5cbf;"></div><span class="ui5-event-name">{$t('componentGallery.ui5.event1')}</span><span class="ui5-event-time">10:00 AM</span></div>
+          <div class="ui5-event"><div class="ui5-event-dot" style="background:#2563eb;"></div><span class="ui5-event-name">{$t('componentGallery.ui5.event2')}</span><span class="ui5-event-time">2:00 PM</span></div>
         </div>
       </div>
     </div>
-    <div class="card-footer"><span class="card-title">Calendar Block</span><span class="card-tag">Data</span></div>
+    <div class="card-footer"><span class="card-title">{$t('componentGallery.cards.calendarTitle')}</span><span class="card-tag">{$t('componentGallery.cards.calendarTag')}</span></div>
   </div>
 
   <div class="card">
     <div class="card-preview">
       <div class="ui6">
-        <div class="ui6-profile"><div class="ui6-avatar">JD</div><div><div class="ui6-name">Jane Doe</div><div class="ui6-role">Product Designer · Pro</div></div></div>
-        <div class="ui6-section-lbl">Preferences</div>
+        <div class="ui6-profile"><div class="ui6-avatar">JD</div><div><div class="ui6-name">{$t('componentGallery.ui6.name')}</div><div class="ui6-role">{$t('componentGallery.ui6.role')}</div></div></div>
+        <div class="ui6-section-lbl">{$t('componentGallery.ui6.preferences')}</div>
         <div class="ui6-items">
-          <div class="ui6-item"><div class="ui6-item-icon" style="background:#f0e6ff;"><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="none" stroke="#7c5cbf" stroke-width="1.2"/><circle cx="6" cy="6" r="1.5" fill="#7c5cbf"/></svg></div><span class="ui6-item-name">Dark Mode</span><div class="ui6-toggle"><div class="ui6-toggle-thumb"></div></div></div>
-          <div class="ui6-item"><div class="ui6-item-icon" style="background:#e6f0ff;"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v2M6 9v2M1 6h2M9 6h2" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="2" fill="none" stroke="#2563eb" stroke-width="1.2"/></svg></div><span class="ui6-item-name">Notifications</span><span class="ui6-item-arrow">›</span></div>
+          <div class="ui6-item"><div class="ui6-item-icon" style="background:#f0e6ff;"><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="none" stroke="#7c5cbf" stroke-width="1.2"/><circle cx="6" cy="6" r="1.5" fill="#7c5cbf"/></svg></div><span class="ui6-item-name">{$t('componentGallery.ui6.darkMode')}</span><div class="ui6-toggle"><div class="ui6-toggle-thumb"></div></div></div>
+          <div class="ui6-item"><div class="ui6-item-icon" style="background:#e6f0ff;"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v2M6 9v2M1 6h2M9 6h2" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="2" fill="none" stroke="#2563eb" stroke-width="1.2"/></svg></div><span class="ui6-item-name">{$t('componentGallery.ui6.notifications')}</span><span class="ui6-item-arrow">›</span></div>
         </div>
         <div class="ui6-progress-row">
-          <div class="ui6-progress-label"><span>Storage used</span><span>85%</span></div>
+          <div class="ui6-progress-label"><span>{$t('componentGallery.ui6.storageUsed')}</span><span>85%</span></div>
           <div class="ui6-progress-track"><div class="ui6-progress-fill"></div></div>
         </div>
       </div>
     </div>
-    <div class="card-footer"><span class="card-title">User Workspace</span><span class="card-tag">Navigation</span></div>
+    <div class="card-footer"><span class="card-title">{$t('componentGallery.cards.workspaceTitle')}</span><span class="card-tag">{$t('componentGallery.cards.workspaceTag')}</span></div>
   </div>
 
 </div>

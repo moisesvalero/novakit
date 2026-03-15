@@ -1,12 +1,13 @@
 <script lang="ts">
   import PhoneMockup from '$lib/components/PhoneMockup.svelte';
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 </script>
 
 <section class="superpowers" id="superpowers">
   <div class="header" use:reveal={{ stage: 'title' }}>
-    <p class="eyebrow">Explore NovaKit in a whole new way.</p>
-    <h2>Everyday superpowers para interfaces de producto modernas.</h2>
+    <p class="eyebrow">{$t('superpowers.eyebrow')}</p>
+    <h2>{$t('superpowers.title')}</h2>
   </div>
 
   <div class="layout">
@@ -16,50 +17,44 @@
 
     <div class="grid">
       <article class="card motion-card" use:reveal={{ stage: 'content', delay: 180 }}>
-        <h3>Design tokens listos</h3>
+        <h3>{$t('superpowers.card1Title')}</h3>
         <p>
-          Tipografía, espaciados y radios coherentes desde el primer día, sin
-          pelearte con un sistema de diseño entero.
+          {$t('superpowers.card1Desc')}
         </p>
       </article>
 
       <article class="card motion-card" use:reveal={{ stage: 'content', delay: 220 }}>
-        <h3>Motion sin esfuerzo</h3>
+        <h3>{$t('superpowers.card2Title')}</h3>
         <p>
-          Scroll reveal, hovers y micro‑animaciones suaves ya cableadas, listas
-          para ajustar con una sola clase.
+          {$t('superpowers.card2Desc')}
         </p>
       </article>
 
       <article class="card motion-card" use:reveal={{ stage: 'content', delay: 260 }}>
-        <h3>Componentes composables</h3>
+        <h3>{$t('superpowers.card3Title')}</h3>
         <p>
-          Secciones pensadas como bloques de Lego: héroes, pricing, FAQs y más que
-          encajan sin romper el layout.
+          {$t('superpowers.card3Desc')}
         </p>
       </article>
 
       <article class="card motion-card" use:reveal={{ stage: 'content', delay: 300 }}>
-        <h3>Ready for Svelte 5</h3>
+        <h3>{$t('superpowers.card4Title')}</h3>
         <p>
-          Estado con runes, acciones y tipado TypeScript, para que la DX sea tan
-          moderna como el diseño.
+          {$t('superpowers.card4Desc')}
         </p>
       </article>
 
       <article class="card motion-card" use:reveal={{ stage: 'content', delay: 340 }}>
-        <h3>Opinionado, no cerrado</h3>
+        <h3>{$t('superpowers.card5Title')}</h3>
         <p>
-          Puntos de vista fuertes sobre espaciado y ritmo visual, pero con CSS
-          claro que puedes adaptar a tu marca.
+          {$t('superpowers.card5Desc')}
         </p>
       </article>
 
       <article class="card motion-card" use:reveal={{ stage: 'content', delay: 380 }}>
-        <h3>Listo para producción</h3>
+        <h3>{$t('superpowers.card6Title')}</h3>
         <p>
-          Patrones pensados para productos reales, no sólo para portfolios:
-          loading states, vacíos y mensajes de error.
+          {$t('superpowers.card6Desc')}
         </p>
       </article>
     </div>

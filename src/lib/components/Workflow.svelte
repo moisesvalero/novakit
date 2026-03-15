@@ -1,15 +1,15 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 </script>
 
 <section class="workflow" id="how-it-works">
   <div class="inner">
     <div class="copy" use:reveal={{ stage: 'title' }}>
-      <p class="eyebrow">How NovaKit fits your flow</p>
-      <h2>From wireframe to polished interface in hours, not weeks.</h2>
+      <p class="eyebrow">{$t('workflow.eyebrow')}</p>
+      <h2>{$t('workflow.title')}</h2>
       <p class="subtitle">
-        Combine ready‑made blocks, tweak tokens, and ship product‑ready UI kits
-        without drowning in Figma files or CSS refactors.
+        {$t('workflow.subtitle')}
       </p>
     </div>
 
@@ -26,8 +26,8 @@
             <path d="M5 6.5h14M5 12h14M5 17.5h8" />
           </svg>
         </div>
-        <h3>Design</h3>
-        <p>Define UI blocks, spacing, and style tokens.</p>
+        <h3>{$t('workflow.steps.designTitle')}</h3>
+        <p>{$t('workflow.steps.designDesc')}</p>
       </article>
 
       <article class="step" use:reveal={{ stage: 'content', delay: 250 }}>
@@ -37,8 +37,8 @@
             <path d="M7 7h10v10H7zM4 20h16" />
           </svg>
         </div>
-        <h3>Build</h3>
-        <p>Compose reusable components directly in Svelte.</p>
+        <h3>{$t('workflow.steps.buildTitle')}</h3>
+        <p>{$t('workflow.steps.buildDesc')}</p>
       </article>
 
       <article class="step" use:reveal={{ stage: 'content', delay: 330 }}>
@@ -48,8 +48,8 @@
             <path d="M6 12l4 4 8-8M4 20h16" />
           </svg>
         </div>
-        <h3>Ship</h3>
-        <p>Launch polished screens with ready-to-use motion.</p>
+        <h3>{$t('workflow.steps.shipTitle')}</h3>
+        <p>{$t('workflow.steps.shipDesc')}</p>
       </article>
     </div>
   </div>

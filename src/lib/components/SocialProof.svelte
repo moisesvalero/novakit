@@ -1,10 +1,11 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 </script>
 
 <section class="social-proof">
   <div class="inner">
-    <p class="eyebrow" use:reveal={{ stage: 'title' }}>Trusted by teams using</p>
+    <p class="eyebrow" use:reveal={{ stage: 'title' }}>{$t('socialProof.eyebrow')}</p>
     <div class="logos">
       <div class="logo-item" aria-label="Svelte" use:reveal={{ stage: 'content', delay: 80 }}>
         <img src="/logos/svelte.svg" alt="Svelte" />
@@ -40,15 +41,15 @@
     <div class="stats">
       <div class="stat" use:reveal={{ stage: 'content', delay: 320 }}>
         <span class="value">50+</span>
-        <span class="label">Premium components</span>
+        <span class="label">{$t('socialProof.stats.components')}</span>
       </div>
       <div class="stat" use:reveal={{ stage: 'content', delay: 380 }}>
         <span class="value">3x</span>
-        <span class="label">Faster delivery</span>
+        <span class="label">{$t('socialProof.stats.delivery')}</span>
       </div>
       <div class="stat" use:reveal={{ stage: 'content', delay: 440 }}>
         <span class="value">24/7</span>
-        <span class="label">Priority support</span>
+        <span class="label">{$t('socialProof.stats.support')}</span>
       </div>
     </div>
   </div>

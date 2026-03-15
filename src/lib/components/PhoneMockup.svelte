@@ -1,10 +1,14 @@
 <script>
   import { onMount } from 'svelte';
-  let screenEl;
+  /** @type {HTMLDivElement | null} */
+  let screenEl = null;
 
   onMount(() => {
+    if (!screenEl) return;
     const scale = screenEl.offsetWidth / 390;
+    /** @type {HTMLIFrameElement | null} */
     const iframe = screenEl.querySelector('iframe');
+    if (!iframe) return;
     iframe.style.transform = `scale(${scale})`;
     iframe.style.transformOrigin = 'top left';
     iframe.style.width = '390px';

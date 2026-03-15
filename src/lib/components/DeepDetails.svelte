@@ -1,142 +1,142 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 </script>
 
 <section class="deep-details" id="details">
   <div class="inner">
     <header class="header" use:reveal={{ stage: 'title' }}>
-      <p class="eyebrow">Details that matter for product UI.</p>
-      <h2>Move seamlessly from idea to shipped interface.</h2>
+      <p class="eyebrow">{$t('deepDetails.eyebrow')}</p>
+      <h2>{$t('deepDetails.title')}</h2>
       <p class="subtitle">
-        NovaKit cuida los pequeños detalles de tus pantallas: estados, espacios,
-        ritmo visual y accesibilidad.
+        {$t('deepDetails.subtitle')}
       </p>
     </header>
 
     <div class="marquee" use:reveal={{ stage: 'content', delay: 150 }}>
       <ul class="list">
         <li>
-          <span class="text">Real‑time ready layouts para dashboards colaborativos.</span>
-          <span class="tag">Dashboards listos para production</span>
+          <span class="text">{$t('deepDetails.items.item1Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item1Tag')}</span>
         </li>
         <li>
-          <span class="text">Repeatable sections para pricing, onboarding y anuncios in‑product.</span>
-          <span class="tag">Reutiliza sin perder personalidad</span>
+          <span class="text">{$t('deepDetails.items.item2Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item2Tag')}</span>
         </li>
         <li>
-          <span class="text">Offline‑friendly patterns para apps que no pueden fallar.</span>
-          <span class="tag">Pensado para condiciones reales</span>
+          <span class="text">{$t('deepDetails.items.item3Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item3Tag')}</span>
         </li>
         <li>
-          <span class="text">Widget‑like cards listas para métricas, activity feeds y más.</span>
-          <span class="tag">Bloques que parecen producto</span>
+          <span class="text">{$t('deepDetails.items.item4Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item4Tag')}</span>
         </li>
         <li>
-          <span class="text">Nested layouts pensados para vistas complejas sin perder claridad.</span>
-          <span class="tag">Complejo por dentro, claro por fuera</span>
+          <span class="text">{$t('deepDetails.items.item5Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item5Tag')}</span>
         </li>
         <li>
-          <span class="text">TypeScript y Svelte 5 runes para una DX moderna.</span>
-          <span class="tag">DX y diseño al mismo nivel</span>
+          <span class="text">{$t('deepDetails.items.item6Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item6Tag')}</span>
         </li>
         <li>
-          <span class="text">Integraciones limpias con APIs REST y GraphQL.</span>
-          <span class="tag">Conecta tus datos en minutos</span>
+          <span class="text">{$t('deepDetails.items.item7Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item7Tag')}</span>
         </li>
         <li>
-          <span class="text">Estados de carga, error y vacío coherentes en toda la app.</span>
-          <span class="tag">Nunca más pantallas rotas</span>
+          <span class="text">{$t('deepDetails.items.item8Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item8Tag')}</span>
         </li>
         <li>
-          <span class="text">Animaciones suaves, sin sacrificar rendimiento.</span>
-          <span class="tag">Motion pensado para producto</span>
+          <span class="text">{$t('deepDetails.items.item9Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item9Tag')}</span>
         </li>
         <li>
-          <span class="text">Accesibilidad cuidada: foco visible, contraste y roles semánticos.</span>
-          <span class="tag">Bonito, pero también usable</span>
+          <span class="text">{$t('deepDetails.items.item10Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item10Tag')}</span>
         </li>
 
         <li>
-          <span class="text">Plantillas de emails transaccionales alineadas con tu UI de producto.</span>
-          <span class="tag">Experiencia consistente end‑to‑end</span>
+          <span class="text">{$t('deepDetails.items.item11Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item11Tag')}</span>
         </li>
         <li>
-          <span class="text">Componentes pensados para dark mode sin reescribir todo el tema.</span>
-          <span class="tag">Un solo kit, dos modos</span>
+          <span class="text">{$t('deepDetails.items.item12Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item12Tag')}</span>
         </li>
         <li>
-          <span class="text">Patrones de navegación listos para apps con muchos equipos y espacios.</span>
-          <span class="tag">Escala sin perderte</span>
+          <span class="text">{$t('deepDetails.items.item13Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item13Tag')}</span>
         </li>
         <li>
-          <span class="text">Layouts para páginas vacías que invitan a la acción, no a cerrar la pestaña.</span>
-          <span class="tag">Vacíos que inspiran</span>
+          <span class="text">{$t('deepDetails.items.item14Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item14Tag')}</span>
         </li>
         <li>
-          <span class="text">Microcopys sugeridos para CTAs, estados y tooltips de producto.</span>
-          <span class="tag">Texto y diseño de la mano</span>
+          <span class="text">{$t('deepDetails.items.item15Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item15Tag')}</span>
         </li>
 
         <!-- Duplicamos para efecto “créditos” continuo -->
         <li>
-          <span class="text">Real‑time ready layouts para dashboards colaborativos.</span>
-          <span class="tag">Dashboards listos para production</span>
+          <span class="text">{$t('deepDetails.items.item1Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item1Tag')}</span>
         </li>
         <li>
-          <span class="text">Repeatable sections para pricing, onboarding y anuncios in‑product.</span>
-          <span class="tag">Reutiliza sin perder personalidad</span>
+          <span class="text">{$t('deepDetails.items.item2Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item2Tag')}</span>
         </li>
         <li>
-          <span class="text">Offline‑friendly patterns para apps que no pueden fallar.</span>
-          <span class="tag">Pensado para condiciones reales</span>
+          <span class="text">{$t('deepDetails.items.item3Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item3Tag')}</span>
         </li>
         <li>
-          <span class="text">Widget‑like cards listas para métricas, activity feeds y más.</span>
-          <span class="tag">Bloques que parecen producto</span>
+          <span class="text">{$t('deepDetails.items.item4Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item4Tag')}</span>
         </li>
         <li>
-          <span class="text">Nested layouts pensados para vistas complejas sin perder claridad.</span>
-          <span class="tag">Complejo por dentro, claro por fuera</span>
+          <span class="text">{$t('deepDetails.items.item5Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item5Tag')}</span>
         </li>
         <li>
-          <span class="text">TypeScript y Svelte 5 runes para una DX moderna.</span>
-          <span class="tag">DX y diseño al mismo nivel</span>
+          <span class="text">{$t('deepDetails.items.item6Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item6Tag')}</span>
         </li>
         <li>
-          <span class="text">Integraciones limpias con APIs REST y GraphQL.</span>
-          <span class="tag">Conecta tus datos en minutos</span>
+          <span class="text">{$t('deepDetails.items.item7Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item7Tag')}</span>
         </li>
         <li>
-          <span class="text">Estados de carga, error y vacío coherentes en toda la app.</span>
-          <span class="tag">Nunca más pantallas rotas</span>
+          <span class="text">{$t('deepDetails.items.item8Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item8Tag')}</span>
         </li>
         <li>
-          <span class="text">Animaciones suaves, sin sacrificar rendimiento.</span>
-          <span class="tag">Motion pensado para producto</span>
+          <span class="text">{$t('deepDetails.items.item9Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item9Tag')}</span>
         </li>
         <li>
-          <span class="text">Accesibilidad cuidada: foco visible, contraste y roles semánticos.</span>
-          <span class="tag">Bonito, pero también usable</span>
+          <span class="text">{$t('deepDetails.items.item10Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item10Tag')}</span>
         </li>
         <li>
-          <span class="text">Plantillas de emails transaccionales alineadas con tu UI de producto.</span>
-          <span class="tag">Experiencia consistente end‑to‑end</span>
+          <span class="text">{$t('deepDetails.items.item11Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item11Tag')}</span>
         </li>
         <li>
-          <span class="text">Componentes pensados para dark mode sin reescribir todo el tema.</span>
-          <span class="tag">Un solo kit, dos modos</span>
+          <span class="text">{$t('deepDetails.items.item12Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item12Tag')}</span>
         </li>
         <li>
-          <span class="text">Patrones de navegación listos para apps con muchos equipos y espacios.</span>
-          <span class="tag">Escala sin perderte</span>
+          <span class="text">{$t('deepDetails.items.item13Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item13Tag')}</span>
         </li>
         <li>
-          <span class="text">Layouts para páginas vacías que invitan a la acción, no a cerrar la pestaña.</span>
-          <span class="tag">Vacíos que inspiran</span>
+          <span class="text">{$t('deepDetails.items.item14Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item14Tag')}</span>
         </li>
         <li>
-          <span class="text">Microcopys sugeridos para CTAs, estados y tooltips de producto.</span>
-          <span class="tag">Texto y diseño de la mano</span>
+          <span class="text">{$t('deepDetails.items.item15Text')}</span>
+          <span class="tag">{$t('deepDetails.items.item15Tag')}</span>
         </li>
       </ul>
     </div>

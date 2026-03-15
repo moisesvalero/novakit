@@ -1,13 +1,13 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 </script>
 
 <section id="features" class="features">
   <div class="features-head" use:reveal={{ stage: 'title' }}>
-    <h2 class="title">Designed for Modern Interfaces</h2>
+    <h2 class="title">{$t('features.title')}</h2>
     <p class="subtitle">
-      Componentes listos para usar con una estética cuidada, rendimiento moderno y una
-      experiencia visual consistente en todo tu producto.
+      {$t('features.subtitle')}
     </p>
   </div>
 
@@ -16,23 +16,23 @@
       <div class="grid">
         <div class="feature" use:reveal={{ stage: 'content', delay: 130, distance: 52 }}>
           <div class="icon">✨</div>
-          <h3>Clean Components</h3>
-          <p>Construye interfaces limpias y modernas con componentes simples y reutilizables.</p>
+          <h3>{$t('features.cards.cleanTitle')}</h3>
+          <p>{$t('features.cards.cleanDesc')}</p>
         </div>
         <div class="feature" use:reveal={{ stage: 'content', delay: 220, distance: 52 }}>
           <div class="icon">⚡</div>
-          <h3>Fast by Default</h3>
-          <p>Svelte compila tu código para que tu web sea ultra rápida sin esfuerzo.</p>
+          <h3>{$t('features.cards.fastTitle')}</h3>
+          <p>{$t('features.cards.fastDesc')}</p>
         </div>
         <div class="feature" use:reveal={{ stage: 'content', delay: 310, distance: 52 }}>
           <div class="icon">🎨</div>
-          <h3>Premium Design</h3>
-          <p>Estilo minimalista, tipografía grande y microanimaciones suaves.</p>
+          <h3>{$t('features.cards.premiumTitle')}</h3>
+          <p>{$t('features.cards.premiumDesc')}</p>
         </div>
         <div class="feature" use:reveal={{ stage: 'content', delay: 360, distance: 52 }}>
           <div class="icon">🧩</div>
-          <h3>Fully Customizable</h3>
-          <p>Adapta colores, tipografías y espaciados con tokens de diseño en segundos.</p>
+          <h3>{$t('features.cards.customTitle')}</h3>
+          <p>{$t('features.cards.customDesc')}</p>
         </div>
     </div>
     </div>
@@ -59,8 +59,8 @@
               </div>
               <div class="ios-nav">
                 <div>
-                  <div class="ios-nav-title">NovaKit Store</div>
-                  <div class="ios-nav-sub">247 components available</div>
+                  <div class="ios-nav-title">{$t('features.mockup.storeTitle')}</div>
+                  <div class="ios-nav-sub">{$t('features.mockup.storeSub')}</div>
                 </div>
                 <div class="ios-notif">
                   <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 00-3.5 3.5V7L1 8.5h10L9.5 7V4.5A3.5 3.5 0 006 1z" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M4.5 9.5a1.5 1.5 0 003 0" fill="none" stroke="#fff" stroke-width="1.2"/></svg>
@@ -69,81 +69,81 @@
               </div>
               <div class="ios-search">
                 <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="4" cy="4" r="3" fill="none" stroke="#8e8e93" stroke-width="1.2"/><path d="M6.5 6.5L9 9" stroke="#8e8e93" stroke-width="1.2" stroke-linecap="round"/></svg>
-                <span class="ios-search-text"><span class="ios-typing-text">Dashboard components...</span><span class="ios-cursor"></span></span>
+                <span class="ios-search-text"><span class="ios-typing-text">{$t('features.mockup.searchPlaceholder')}</span><span class="ios-cursor"></span></span>
               </div>
               <div class="ios-segments">
                 <div class="ios-seg-indicator"></div>
-                <div class="ios-seg active">All</div>
-                <div class="ios-seg">Layout</div>
-                <div class="ios-seg">Forms</div>
-                <div class="ios-seg">Charts</div>
+                <div class="ios-seg active">{$t('features.mockup.segAll')}</div>
+                <div class="ios-seg">{$t('features.mockup.segLayout')}</div>
+                <div class="ios-seg">{$t('features.mockup.segForms')}</div>
+                <div class="ios-seg">{$t('features.mockup.segCharts')}</div>
               </div>
               <div class="ios-cards">
                 <div class="ios-card-feat purple">
                   <div class="ios-card-sweep"></div>
-                  <div class="ios-card-tag">NEW</div>
-                  <div class="ios-card-feat-label">Dashboard Kit</div>
+                  <div class="ios-card-tag">{$t('features.mockup.new')}</div>
+                  <div class="ios-card-feat-label">{$t('features.mockup.dashboardKit')}</div>
                 </div>
                 <div class="ios-card-feat blue">
                   <div class="ios-card-sweep"></div>
-                  <div class="ios-card-tag">HOT</div>
-                  <div class="ios-card-feat-label">Analytics UI</div>
+                  <div class="ios-card-tag">{$t('features.mockup.hot')}</div>
+                  <div class="ios-card-feat-label">{$t('features.mockup.analyticsUi')}</div>
                 </div>
               </div>
               <div class="ios-section-header">
-                <span class="ios-section-title">Popular Components</span>
-                <span class="ios-section-more">See All</span>
+                <span class="ios-section-title">{$t('features.mockup.popular')}</span>
+                <span class="ios-section-more">{$t('features.mockup.seeAll')}</span>
               </div>
               <div class="ios-grid">
                 <div class="ios-grid-item">
                   <div class="ios-grid-icon" style="background:#f0e6ff;"><svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1" fill="#7c5cbf"/><rect x="9" y="2" width="5" height="5" rx="1" fill="#7c5cbf"/><rect x="2" y="9" width="5" height="5" rx="1" fill="#7c5cbf"/><rect x="9" y="9" width="5" height="5" rx="1" fill="#7c5cbf"/></svg></div>
-                  <span class="ios-grid-name">Grid</span><span class="ios-grid-price">Free</span>
+                  <span class="ios-grid-name">{$t('features.mockup.grid')}</span><span class="ios-grid-price">{$t('features.mockup.free')}</span>
                 </div>
                 <div class="ios-grid-item">
                   <div class="ios-grid-icon" style="background:#e6f0ff;"><svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="5" width="12" height="2" rx="1" fill="#2563eb"/><rect x="2" y="9" width="8" height="2" rx="1" fill="#2563eb" opacity="0.5"/></svg></div>
-                  <span class="ios-grid-name">List</span><span class="ios-grid-price">Free</span>
+                  <span class="ios-grid-name">{$t('features.mockup.list')}</span><span class="ios-grid-price">{$t('features.mockup.free')}</span>
                 </div>
                 <div class="ios-grid-item">
                   <div class="ios-grid-icon" style="background:#e6fff0;"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5" fill="none" stroke="#34c759" stroke-width="2"/><path d="M5 8l2 2 4-4" stroke="#34c759" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
-                  <span class="ios-grid-name">Form</span><span class="ios-grid-price">$4</span>
+                  <span class="ios-grid-name">{$t('features.mockup.form')}</span><span class="ios-grid-price">$4</span>
                 </div>
                 <div class="ios-grid-item">
                   <div class="ios-grid-icon" style="background:#fff0e6;"><svg width="16" height="16" viewBox="0 0 16 16"><polyline points="2,12 5,7 8,9 11,4 14,6" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-                  <span class="ios-grid-name">Chart</span><span class="ios-grid-price">$6</span>
+                  <span class="ios-grid-name">{$t('features.mockup.chart')}</span><span class="ios-grid-price">$6</span>
                 </div>
               </div>
               <div class="ios-section-header" style="margin-top:3px;">
-                <span class="ios-section-title">Recently Added</span>
-                <span class="ios-section-more">See All</span>
+                <span class="ios-section-title">{$t('features.mockup.recent')}</span>
+                <span class="ios-section-more">{$t('features.mockup.seeAll')}</span>
               </div>
               <div class="ios-list">
                 <div class="ios-list-item">
                   <div class="ios-list-avatar" style="background:linear-gradient(135deg,#7c5cbf,#a78bfa);"></div>
-                  <div class="ios-list-info"><div class="ios-list-name">Hero Section</div><div class="ios-list-desc">Landing · Svelte</div></div>
+                  <div class="ios-list-info"><div class="ios-list-name">{$t('features.mockup.heroSection')}</div><div class="ios-list-desc">{$t('features.mockup.landingSvelte')}</div></div>
                   <span class="ios-list-price">$12</span>
                 </div>
                 <div class="ios-list-item">
                   <div class="ios-list-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa);"></div>
-                  <div class="ios-list-info"><div class="ios-list-name">Pricing Table</div><div class="ios-list-desc">Commerce · React</div></div>
+                  <div class="ios-list-info"><div class="ios-list-name">{$t('features.mockup.pricingTable')}</div><div class="ios-list-desc">{$t('features.mockup.commerceReact')}</div></div>
                   <span class="ios-list-price">$8</span>
                 </div>
               </div>
               <div class="ios-tabbar">
                 <div class="ios-tab active">
                   <svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9L9 3l6 6" fill="none" stroke="#007aff" stroke-width="1.5" stroke-linecap="round"/><rect x="5" y="9" width="8" height="7" rx="1" fill="none" stroke="#007aff" stroke-width="1.5"/></svg>
-                  <span class="ios-tab-label" style="color:#007aff;">Home</span>
+                  <span class="ios-tab-label" style="color:#007aff;">{$t('features.mockup.home')}</span>
                 </div>
                 <div class="ios-tab">
                   <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" fill="none" stroke="#8e8e93" stroke-width="1.5"/><circle cx="9" cy="9" r="2" fill="#8e8e93"/></svg>
-                  <span class="ios-tab-label">Browse</span>
+                  <span class="ios-tab-label">{$t('features.mockup.browse')}</span>
                 </div>
                 <div class="ios-tab">
                   <svg width="18" height="18" viewBox="0 0 18 18"><rect x="3" y="3" width="12" height="12" rx="2" fill="none" stroke="#8e8e93" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#8e8e93" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <span class="ios-tab-label">Library</span>
+                  <span class="ios-tab-label">{$t('features.mockup.library')}</span>
                 </div>
                 <div class="ios-tab">
                   <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="7" r="3" fill="none" stroke="#8e8e93" stroke-width="1.5"/><path d="M3 15c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="#8e8e93" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <span class="ios-tab-label">Profile</span>
+                  <span class="ios-tab-label">{$t('features.mockup.profile')}</span>
                 </div>
               </div>
               <div class="screen-shine"></div>

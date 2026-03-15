@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { t } from '$lib/i18n/index.js';
 
   let heroLoaded = $state(false);
   let splineLoaded = $state(false);
@@ -40,22 +41,21 @@
   <div class="hero-inner">
     <div class="copy">
       <div class="pill hero-assemble hero-pill">
-        NovaKit · Creative UI Toolkit
+        {$t('hero.pill')}
       </div>
       <h1 class="hero-assemble hero-title">
-        Creative UI Toolkit<br />
-        <span>for Modern Web Apps</span>
+        {$t('hero.titleLine1')}<br />
+        <span>{$t('hero.titleLine2')}</span>
       </h1>
       <p class="subtitle hero-assemble hero-subtitle">
-        Diseña y construye interfaces limpias, rápidas y elegantes con un diseño premium y una experiencia moderna.
+        {$t('hero.subtitle')}
       </p>
       <div class="actions hero-assemble hero-actions">
-        <a class="btn-primary" href="#pricing">Get NovaKit</a>
-        <a class="btn-secondary" href="#components">Explore components</a>
+        <a class="btn-primary" href="#pricing">{$t('hero.ctaPrimary')}</a>
+        <a class="btn-secondary" href="#components">{$t('hero.ctaSecondary')}</a>
       </div>
       <p class="footnote hero-assemble hero-footnote">
-        No templates genéricos. Secciones de producto modernas listas para
-        combinar, animar y llevar a producción.
+        {$t('hero.footnote')}
       </p>
     </div>
     <div class="hero-spacer" aria-hidden="true"></div>

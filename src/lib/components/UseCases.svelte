@@ -1,43 +1,40 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 </script>
 
 <section class="use-cases" id="use-cases">
   <div class="header" use:reveal={{ stage: 'title' }}>
-    <p class="eyebrow">Built for busy product teams</p>
-    <h2>Use NovaKit wherever clean, fast UI really matters.</h2>
+    <p class="eyebrow">{$t('useCases.eyebrow')}</p>
+    <h2>{$t('useCases.title')}</h2>
   </div>
 
   <div class="grid">
     <article class="case motion-card" use:reveal={{ stage: 'content', delay: 140 }}>
-      <h3>SaaS dashboards</h3>
+      <h3>{$t('useCases.case1Title')}</h3>
       <p>
-        Compose analytics views, settings areas, and billing pages that feel
-        consistent across your product.
+        {$t('useCases.case1Desc')}
       </p>
     </article>
 
     <article class="case motion-card" use:reveal={{ stage: 'content', delay: 190 }}>
-      <h3>Internal tools</h3>
+      <h3>{$t('useCases.case2Title')}</h3>
       <p>
-        Give your ops and support teams interfaces that feel as polished as the
-        public‑facing product.
+        {$t('useCases.case2Desc')}
       </p>
     </article>
 
     <article class="case motion-card" use:reveal={{ stage: 'content', delay: 240 }}>
-      <h3>Client projects</h3>
+      <h3>{$t('useCases.case3Title')}</h3>
       <p>
-        Reuse a dependable SvelteKit foundation on every engagement, while each
-        brand still feels unique.
+        {$t('useCases.case3Desc')}
       </p>
     </article>
 
     <article class="case motion-card" use:reveal={{ stage: 'content', delay: 290 }}>
-      <h3>Design handoffs</h3>
+      <h3>{$t('useCases.case4Title')}</h3>
       <p>
-        Bridge the gap between Figma and code with sections that mirror modern
-        product UI patterns.
+        {$t('useCases.case4Desc')}
       </p>
     </article>
   </div>

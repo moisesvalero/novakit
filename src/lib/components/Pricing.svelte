@@ -1,5 +1,6 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 
   const { isYearly, toggleBilling } = $props<{
     isYearly: boolean;
@@ -9,10 +10,10 @@
 
 <section id="pricing" class="pricing">
   <div class="pricing-header" use:reveal={{ stage: 'title' }}>
-    <h2>Simple, Transparent Pricing</h2>
-    <p>Escoge el plan que mejor se adapte a tu equipo.</p>
+    <h2>{$t('pricing.title')}</h2>
+    <p>{$t('pricing.subtitle')}</p>
     <div class="toggle-container">
-      <span class:active={!isYearly}>Monthly</span>
+      <span class:active={!isYearly}>{$t('pricing.monthly')}</span>
       <button
         type="button"
         class="toggle-btn"
@@ -22,7 +23,7 @@
         <div class="toggle-circle" class:yearly={isYearly}></div>
       </button>
       <span class:active={isYearly}>
-        Yearly <mark>-20%</mark>
+        {$t('pricing.yearly')} <mark>-20%</mark>
       </span>
     </div>
   </div>
@@ -30,8 +31,8 @@
   <div class="pricing-grid">
     <div class="price-card" use:reveal={{ stage: 'content', delay: 150 }}>
       <div class="plan-info">
-        <h3>Starter</h3>
-        <p>Perfecto para side projects y MVPs rápidos.</p>
+        <h3>{$t('pricing.starterTitle')}</h3>
+        <p>{$t('pricing.starterDesc')}</p>
       </div>
       <div class="price-display">
         <span class="currency">$</span>
@@ -39,17 +40,17 @@
         <span class="period">/{isYearly ? 'yr' : 'mo'}</span>
       </div>
       <ul class="features-list">
-        <li>✓ 10 proyectos activos</li>
-        <li>✓ Acceso a layouts base</li>
-        <li>✓ Actualizaciones mensuales</li>
+        <li>{$t('pricing.starterFeat1')}</li>
+        <li>{$t('pricing.starterFeat2')}</li>
+        <li>{$t('pricing.starterFeat3')}</li>
       </ul>
-      <button type="button" class="btn-primary full-width">Start with Starter</button>
+      <button type="button" class="btn-primary full-width">{$t('pricing.starterBtn')}</button>
     </div>
 
     <div class="price-card featured" use:reveal={{ stage: 'content', delay: 230 }}>
       <div class="plan-info">
-        <h3>Pro</h3>
-        <p>El paquete ideal para productos en producción.</p>
+        <h3>{$t('pricing.proTitle')}</h3>
+        <p>{$t('pricing.proDesc')}</p>
       </div>
       <div class="price-display">
         <span class="currency">$</span>
@@ -57,17 +58,17 @@
         <span class="period">/{isYearly ? 'yr' : 'mo'}</span>
       </div>
       <ul class="features-list">
-        <li>✓ Unlimited Projects</li>
-        <li>✓ Premium Components</li>
-        <li>✓ 24/7 Priority Support</li>
+        <li>{$t('pricing.proFeat1')}</li>
+        <li>{$t('pricing.proFeat2')}</li>
+        <li>{$t('pricing.proFeat3')}</li>
       </ul>
-      <button type="button" class="btn-primary full-width">Get Pro</button>
+      <button type="button" class="btn-primary full-width">{$t('pricing.proBtn')}</button>
     </div>
 
     <div class="price-card" use:reveal={{ stage: 'content', delay: 190 }}>
       <div class="plan-info">
-        <h3>Teams</h3>
-        <p>Equipos de producto que necesitan mover rápido en varios proyectos.</p>
+        <h3>{$t('pricing.teamsTitle')}</h3>
+        <p>{$t('pricing.teamsDesc')}</p>
       </div>
       <div class="price-display">
         <span class="currency">$</span>
@@ -75,11 +76,11 @@
         <span class="period">/{isYearly ? 'yr' : 'mo'}</span>
       </div>
       <ul class="features-list">
-        <li>✓ Hasta 10 seats</li>
-        <li>✓ Design tokens compartidos</li>
-        <li>✓ Soporte prioritario dedicado</li>
+        <li>{$t('pricing.teamsFeat1')}</li>
+        <li>{$t('pricing.teamsFeat2')}</li>
+        <li>{$t('pricing.teamsFeat3')}</li>
       </ul>
-      <button type="button" class="btn-primary full-width">Talk to sales</button>
+      <button type="button" class="btn-primary full-width">{$t('pricing.teamsBtn')}</button>
     </div>
   </div>
 </section>

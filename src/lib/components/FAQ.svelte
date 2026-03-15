@@ -1,5 +1,11 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
+
+  const { faqs, toggleFaq } = $props<{
+    faqs?: { question: string; answer: string; open: boolean }[];
+    toggleFaq?: (index: number) => void;
+  }>();
 </script>
 
 <section class="cta-section">
@@ -9,13 +15,13 @@
   <div class="cta-inner" use:reveal={{ stage: 'content', delay: 60 }}>
     <div class="cta-eyebrow cta-assemble" use:reveal={{ stage: 'content', delay: 110 }}>
       <div class="cta-dot"></div>
-      Ready to build
+      {$t('faqCta.eyebrow')}
     </div>
-    <h2 class="cta-title cta-assemble" use:reveal={{ stage: 'content', delay: 170 }}>Your next interface<br><span class="cta-gradient">starts here.</span></h2>
-    <p class="cta-subtitle cta-assemble" use:reveal={{ stage: 'content', delay: 230 }}>Stop building from scratch. NovaKit gives you everything you need to ship beautiful products in hours, not weeks.</p>
+    <h2 class="cta-title cta-assemble" use:reveal={{ stage: 'content', delay: 170 }}>{$t('faqCta.titleLine1')}<br><span class="cta-gradient">{$t('faqCta.titleLine2')}</span></h2>
+    <p class="cta-subtitle cta-assemble" use:reveal={{ stage: 'content', delay: 230 }}>{$t('faqCta.subtitle')}</p>
     <div class="cta-buttons cta-assemble" use:reveal={{ stage: 'content', delay: 290 }}>
-      <a class="btn-primary" href="#pricing">Get NovaKit</a>
-      <a class="btn-secondary" href="#components">Explore components</a>
+      <a class="btn-primary" href="#pricing">{$t('faqCta.primary')}</a>
+      <a class="btn-secondary" href="#components">{$t('faqCta.secondary')}</a>
     </div>
     <div class="cta-social-proof cta-assemble" use:reveal={{ stage: 'content', delay: 350 }}>
       <div class="cta-avatars">
@@ -24,7 +30,7 @@
         <div class="cta-av" style="background:linear-gradient(135deg,#34c759,#86efac);"></div>
         <div class="cta-av" style="background:linear-gradient(135deg,#f97316,#fbbf24);"></div>
       </div>
-      <span class="cta-proof-text"><strong>2,400+</strong> developers trust NovaKit</span>
+      <span class="cta-proof-text">{@html $t('faqCta.proof')}</span>
       <div class="cta-divider"></div>
       <div class="cta-stars">
         <div class="cta-star"></div>
@@ -33,7 +39,7 @@
         <div class="cta-star"></div>
         <div class="cta-star"></div>
       </div>
-      <span class="cta-proof-text"><strong>4.9</strong> / 5 rating</span>
+      <span class="cta-proof-text">{@html $t('faqCta.rating')}</span>
     </div>
   </div>
 </section>

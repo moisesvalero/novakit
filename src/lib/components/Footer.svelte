@@ -1,10 +1,34 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 
   let now = $state(new Date());
+  let locationLabel = $state('ALC / ESP');
+
+  function detectViewerLocation() {
+    const fallback = 'ALC / ESP';
+
+    try {
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const city = timeZone?.split('/').pop()?.replace(/_/g, ' ') ?? '';
+      const cityCode = city ? city.slice(0, 3).toUpperCase() : '';
+
+      const localeCandidates = [navigator.language, ...(navigator.languages ?? [])];
+      const regionMatch = localeCandidates
+        .map((locale) => locale?.match(/-([A-Za-z]{2})\b/))
+        .find(Boolean);
+      const regionCode = regionMatch?.[1]?.toUpperCase() ?? '';
+
+      locationLabel = cityCode && regionCode ? `${cityCode} / ${regionCode}` : fallback;
+    } catch {
+      locationLabel = fallback;
+    }
+  }
 
   onMount(() => {
+    detectViewerLocation();
+
     const id = setInterval(() => {
       now = new Date();
     }, 60_000);
@@ -16,7 +40,7 @@
     const d = now;
     const hour = d.getHours();
     const icon = hour >= 7 && hour < 20 ? '☀' : '☾';
-    const time = d.toLocaleTimeString('es-ES', {
+    const time = d.toLocaleTimeString(undefined, {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false
@@ -36,7 +60,7 @@
         <span class="logo-dot"></span>
         <div class="brand-text">
           <span class="brand-name">NovaKit</span>
-          <span class="brand-tagline">The last UI toolkit you will ever need.</span>
+          <span class="brand-tagline">{$t('footer.tagline')}</span>
         </div>
       </div>
     </div>
@@ -44,7 +68,7 @@
     <div class="side center">
       <div class="status">
         <span class="status-dot animate-pulse" aria-hidden="true"></span>
-        <span class="status-label">ALC / ESP — {worldClock().time}</span>
+        <span class="status-label">{locationLabel} — {worldClock().time}</span>
         <span class="status-icon" aria-hidden="true">{worldClock().icon}</span>
       </div>
     </div>
@@ -54,7 +78,7 @@
         class="back-to-top"
         type="button"
         onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        aria-label="Volver arriba"
+        aria-label={$t('footer.backToTopAria')}
       >
         <svg
           class="arrow-up"
@@ -72,7 +96,7 @@
         </svg>
       </button>
       <div class="credits">
-        <span>Designed by</span>
+        <span>{$t('footer.designedBy')}</span>
         <a href="https://moisesvalero.es/" target="_blank" rel="noreferrer">Moisés Valero</a>
       </div>
     </div>

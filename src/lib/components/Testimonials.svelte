@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { reveal } from '$lib/reveal';
+  import { t } from '$lib/i18n/index.js';
 
   const avatarPalette = [
     '#6366f1',
@@ -42,8 +43,8 @@
 
       const name = nameEl.textContent?.trim() ?? '';
       const roleRaw = roleEl.textContent?.trim() ?? '';
-      const [roleTitle, ...companyParts] = roleRaw.split(' en ');
-      const company = companyParts.join(' en ').trim() || 'Independent';
+      const [roleTitle, ...companyParts] = roleRaw.split(/\s(?:at|en)\s/i);
+      const company = companyParts.join(' ').trim() || 'Independent';
 
       const avatar = document.createElement('span');
       avatar.className = 'avatar';
@@ -73,9 +74,9 @@
 
 <section class="testimonials" id="testimonials">
   <div class="header" use:reveal={{ stage: 'title', threshold: 0.12, rootMargin: '0px 0px -2% 0px' }}>
-    <p class="eyebrow">Loved by designers and builders</p>
-    <h2>Start bringing balance back to your interface work.</h2>
-    <button class="cta">Download NovaKit preview</button>
+    <p class="eyebrow">{$t('testimonials.eyebrow')}</p>
+    <h2>{$t('testimonials.title')}</h2>
+    <button class="cta">{$t('testimonials.cta')}</button>
   </div>
 
   <div class="columns" use:reveal={{ stage: 'content', delay: 70, threshold: 0.08, rootMargin: '0px 0px 6% 0px' }}>
@@ -84,104 +85,92 @@
       <div class="stack stack-slow">
         <article class="quote motion-card">
           <p class="body">
-            “Pasamos de páginas de marketing estáticas a flujos completos en SvelteKit
-            en cuestión de días. NovaKit nos dio un lenguaje visual coherente sin
-            pelear con Figma en cada iteración.”
+            {$t('testimonials.quotes.q1')}
           </p>
           <div class="meta">
             <span class="name">Laura Sánchez</span>
-            <span class="role">Product Designer en Brightlabs</span>
+            <span class="role">{$t('testimonials.roles.r1')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Como freelance, por fin tengo un punto de partida serio. Reutilizo las
-            mismas bases en todos los clientes, pero cada proyecto se siente único
-            gracias a las secciones y tokens.”
+            {$t('testimonials.quotes.q2')}
           </p>
           <div class="meta">
             <span class="name">Diego Romero</span>
-            <span class="role">Frontend freelancer</span>
+            <span class="role">{$t('testimonials.roles.r2')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Nuestro equipo de producto puede prototipar nuevas ideas directamente
-            en SvelteKit, sin esperar a que alguien maquete en HTML cada vez. Las
-            microanimaciones vienen ‘justo bien’ por defecto.”
+            {$t('testimonials.quotes.q3')}
           </p>
           <div class="meta">
             <span class="name">Marta Klein</span>
-            <span class="role">Head of Product en Flowstack</span>
+            <span class="role">{$t('testimonials.roles.r3')}</span>
           </div>
         </article>
 
         <!-- duplicados para bucle -->
         <article class="quote motion-card">
           <p class="body">
-            “Desde que migramos el marketing site a NovaKit, el equipo dejó de decir
-            ‘mañana lo maquetamos’ y pasó a ‘lo lanzo hoy mismo 🚀’.”
+            {$t('testimonials.quotes.q4')}
           </p>
           <div class="meta">
             <span class="name">Sergio Duarte</span>
-            <span class="role">Growth Lead en Shiply</span>
+            <span class="role">{$t('testimonials.roles.r4')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Lo usamos como base para 3 productos distintos y casi nadie lo nota.
-            Cambiamos tokens, logos y textos… y listo. Es como tener un ‘Figma vivo’ ✨.”
+            {$t('testimonials.quotes.q5')}
           </p>
           <div class="meta">
             <span class="name">Julia Pérez</span>
-            <span class="role">Design Engineer</span>
+            <span class="role">{$t('testimonials.roles.r5')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Cada sprint empezamos clonando un layout de NovaKit en vez de una página
-            vieja. Sólo eso ya nos ahorra horas de debates de diseño 🙌.”
+            {$t('testimonials.quotes.q6')}
           </p>
           <div class="meta">
             <span class="name">Héctor Molina</span>
-            <span class="role">Product Manager en LinearOps</span>
+            <span class="role">{$t('testimonials.roles.r6')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Nuestro equipo remoto comparte capturas de la landing en Slack como si
-            fuera un nuevo dribbble shot. Y todo está en producción de verdad 😍.”
+            {$t('testimonials.quotes.q7')}
           </p>
           <div class="meta">
             <span class="name">Emilia Novak</span>
-            <span class="role">Remote Lead Designer</span>
+            <span class="role">{$t('testimonials.roles.r7')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Montamos un mini‑design system alrededor de NovaKit y, por primera vez,
-            diseño y código van a la misma velocidad. No más ‘pixel perfect’ eterno 🧩.”
+            {$t('testimonials.quotes.q8')}
           </p>
           <div class="meta">
             <span class="name">Gonzalo Prieto</span>
-            <span class="role">Design Systems Partner</span>
+            <span class="role">{$t('testimonials.roles.r8')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “El cliente pensaba que habíamos contratado una agencia cara. En realidad
-            eran layouts de NovaKit con cuatro toques de marca 😏.”
+            {$t('testimonials.quotes.q9')}
           </p>
           <div class="meta">
             <span class="name">Elena Puig</span>
-            <span class="role">Freelance Product Designer</span>
+            <span class="role">{$t('testimonials.roles.r9')}</span>
           </div>
         </article>
       </div>
@@ -192,90 +181,82 @@
       <div class="stack stack-medium">
         <article class="quote motion-card">
           <p class="body">
-            “NovaKit nos permite mantener una biblioteca de componentes coherente
-            entre producto, marketing y dashboards internos sin duplicar trabajo ⚙️.”
+            {$t('testimonials.quotes.q10')}
           </p>
           <div class="meta">
             <span class="name">Ana López</span>
-            <span class="role">Design Lead en Pixelwave</span>
+            <span class="role">{$t('testimonials.roles.r10')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “La sensación es la de abrir una app madura desde el día uno. Sólo
-            tuvimos que conectar nuestros datos y empezar a iterar.”
+            {$t('testimonials.quotes.q11')}
           </p>
           <div class="meta">
             <span class="name">Carlos Medina</span>
-            <span class="role">CTO en RelayOS</span>
+            <span class="role">{$t('testimonials.roles.r11')}</span>
           </div>
         </article>
 
         <!-- duplicados -->
         <article class="quote motion-card">
           <p class="body">
-            “Antes teníamos 4 versiones distintas del mismo botón. Ahora todo sale
-            del mismo kit y el equipo de soporte nos manda corazones en Slack 💜.”
+            {$t('testimonials.quotes.q12')}
           </p>
           <div class="meta">
             <span class="name">Nuria Campos</span>
-            <span class="role">Design Systems Lead</span>
+            <span class="role">{$t('testimonials.roles.r12')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Nunca pensé que disfrutaría tanto maquetando tablas y settings. NovaKit
-            hace que hasta las pantallas aburridas se sientan premium 😅.”
+            {$t('testimonials.quotes.q13')}
           </p>
           <div class="meta">
             <span class="name">Tomás Vidal</span>
-            <span class="role">Frontend Engineer</span>
+            <span class="role">{$t('testimonials.roles.r13')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Pasamos de ‘no toquemos esa vista que se rompe’ a ‘clonemos el patrón
-            de NovaKit y adaptémoslo’. Es otra mentalidad completamente distinta 💡.”
+            {$t('testimonials.quotes.q14')}
           </p>
           <div class="meta">
             <span class="name">Raquel Domínguez</span>
-            <span class="role">UX Engineer</span>
+            <span class="role">{$t('testimonials.roles.r14')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “El handoff a back-end ahora es simplemente compartir componentes. Menos
-            tickets, menos screenshots, más pull requests felices 🤝.”
+            {$t('testimonials.quotes.q15')}
           </p>
           <div class="meta">
             <span class="name">Jonas Weber</span>
-            <span class="role">Full‑stack Developer</span>
+            <span class="role">{$t('testimonials.roles.r15')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Hay detalles de motion que parecen sacados de apps tipo Linear o Superlist.
-            Y lo mejor es que puedo leer todo el CSS sin llorar 👀.”
+            {$t('testimonials.quotes.q16')}
           </p>
           <div class="meta">
             <span class="name">Patricia Gil</span>
-            <span class="role">Senior Frontend</span>
+            <span class="role">{$t('testimonials.roles.r16')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Convertimos un prototipo de Figma en una demo navegable en una tarde.
-            El equipo de ventas nos escribió ‘gracias’ en mayúsculas 🔥.”
+            {$t('testimonials.quotes.q17')}
           </p>
           <div class="meta">
             <span class="name">Marco Esposito</span>
-            <span class="role">Sales Engineer</span>
+            <span class="role">{$t('testimonials.roles.r17')}</span>
           </div>
         </article>
       </div>
@@ -286,101 +267,92 @@
       <div class="stack stack-fast">
         <article class="quote motion-card">
           <p class="body">
-            “Esta landing nos permitió validar el mensaje de producto en días.
-            Sólo cambiamos copy y datos, el diseño ya estaba hecho.”
+            {$t('testimonials.quotes.q18')}
           </p>
           <div class="meta">
             <span class="name">Marcos Vidal</span>
-            <span class="role">Founder en Orbit Kit</span>
+            <span class="role">{$t('testimonials.roles.r18')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “La sensación de navegar NovaKit recuerda a las mejores apps de
-            productividad modernas, pero todo es código Svelte que controlamos.”
+            {$t('testimonials.quotes.q19')}
           </p>
           <div class="meta">
             <span class="name">Irene Souza</span>
-            <span class="role">Staff Engineer</span>
+            <span class="role">{$t('testimonials.roles.r19')}</span>
           </div>
         </article>
 
         <!-- duplicados -->
         <article class="quote motion-card">
           <p class="body">
-            “Esta landing nos permitió validar el mensaje de producto en días.
-            Sólo cambiamos copy y datos, el diseño ya estaba hecho ✅.”
+            {$t('testimonials.quotes.q20')}
           </p>
           <div class="meta">
             <span class="name">Marcos Vidal</span>
-            <span class="role">Founder en Orbit Kit</span>
+            <span class="role">{$t('testimonials.roles.r20')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Hicimos el handoff al equipo de marketing y ahora pueden crear nuevas
-            páginas solos. Yo solo reviso el pull request y sonrío 😎.”
+            {$t('testimonials.quotes.q21')}
           </p>
           <div class="meta">
             <span class="name">Lucía Roldán</span>
-            <span class="role">Staff Frontend en Northwind</span>
+            <span class="role">{$t('testimonials.roles.r21')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “El código que genera NovaKit es tan limpio que hasta nuestro CTO,
-            que es muy tiquismiquis, nos dio un ‘ok’ a la primera 🧠.”
+            {$t('testimonials.quotes.q22')}
           </p>
           <div class="meta">
             <span class="name">Pablo Ortega</span>
-            <span class="role">VP of Engineering</span>
+            <span class="role">{$t('testimonials.roles.r22')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “En demo con inversores, usamos directamente la landing hecha con NovaKit.
-            Nadie preguntó por el diseño, sólo por el roadmap. Eso lo dice todo 💬.”
+            {$t('testimonials.quotes.q23')}
           </p>
           <div class="meta">
             <span class="name">Mireia Costa</span>
-            <span class="role">Founder en Lauchly</span>
+            <span class="role">{$t('testimonials.roles.r23')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Conectamos NovaKit a nuestra API y en una tarde teníamos un mini‑portal
-            para clientes que parecía llevar meses puliéndose ✨.”
+            {$t('testimonials.quotes.q24')}
           </p>
           <div class="meta">
             <span class="name">Andrés Lima</span>
-            <span class="role">Solutions Architect</span>
+            <span class="role">{$t('testimonials.roles.r24')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “El equipo de data nos pidió ‘algo rápido’ para enseñar métricas.
-            Les dimos un dashboard con NovaKit y ahora no quieren otra cosa 📊.”
+            {$t('testimonials.quotes.q25')}
           </p>
           <div class="meta">
             <span class="name">Silvia Ramos</span>
-            <span class="role">Analytics Lead</span>
+            <span class="role">{$t('testimonials.roles.r25')}</span>
           </div>
         </article>
 
         <article class="quote motion-card">
           <p class="body">
-            “Me encanta que pueda abrir el repo de la landing, tocar un par de props
-            y ver cambios reales en minutos. Zero miedo a romper el diseño 💻.”
+            {$t('testimonials.quotes.q26')}
           </p>
           <div class="meta">
             <span class="name">Rui Carvalho</span>
-            <span class="role">Software Engineer</span>
+            <span class="role">{$t('testimonials.roles.r26')}</span>
           </div>
         </article>
       </div>
