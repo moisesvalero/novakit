@@ -309,3 +309,22 @@ html.in-iframe * {
 .ui6-progress-track { height:4px; background:#f0f0f5; border-radius:2px; overflow:hidden; }
 .ui6-progress-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,#7c5cbf,#4f8ef7); animation:progressFill 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate; }
 @keyframes progressFill { 0%{width:40%} 100%{width:85%} }
+
+@keyframes statCount { 0%,100%{opacity:1} 50%{opacity:0.7} }
+@keyframes macBar { 0%{transform:scaleY(0.7)} 100%{transform:scaleY(1.05)} }
+@keyframes sldot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes slTyping { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+@keyframes sendPop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+@keyframes compFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
+@keyframes selFloat { 0%,100%{opacity:1} 50%{opacity:0.5} }
+@keyframes figCursor { 0%,100%{transform:translate(0,0)} 33%{transform:translate(20px,-10px)} 66%{transform:translate(-10px,15px)} }
+@keyframes noteFloat { 0%,100%{transform:translateX(0)} 50%{transform:translateX(2px)} }
+@keyframes noteBadge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+@keyframes kpiAnim { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.8;transform:scale(0.98)} }
+@keyframes shArrow { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
+@keyframes glowPulse { 0%,100%{opacity:0.8;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)} }
+@keyframes bgFloat { 0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(-20px)} }
+@keyframes lineReveal { to{opacity:1;transform:translateY(0)} }
+@keyframes gradShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+@keyframes wordCycle { 0%{opacity:0;transform:translateY(20px)} 5%{opacity:1;transform:translateY(0)} 20%{opacity:1;transform:translateY(0)} 25%{opacity:0;transform:translateY(-20px)} 100%{opacity:0} }
+@keyframes arrowPop { 0%,100%{transform:translateX(0)} 50%{transform:translateX(4px)} }

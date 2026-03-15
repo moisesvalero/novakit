@@ -154,6 +154,21 @@
     "case4Title": "Handoffs de diseño",
     "case4Desc": "Acorta la distancia entre Figma y código con secciones que reflejan patrones de producto modernos."
   },
+  "usecases": {
+    "eyebrow": "El kit de UI que lo cambia todo",
+    "line1": "Build interfaces",
+    "line2": "that feel",
+    "line2_accent": "alive.",
+    "line3": "Ship",
+    "word1": "faster.",
+    "word2": "smarter.",
+    "word3": "better.",
+    "word4": "today.",
+    "stat1": "Componentes UI",
+    "stat2": "Desarrolladores",
+    "stat3": "Valoración media",
+    "cta": "Obtener NovaKit"
+  },
   "superpowers": {
     "eyebrow": "Explora NovaKit de una forma totalmente nueva.",
     "title": "Superpoderes cotidianos para interfaces de producto modernas.",

@@ -150,6 +150,21 @@
     "case4Title": "Design handoffs",
     "case4Desc": "Bridge the gap between Figma and code with sections that mirror modern product UI patterns."
   },
+  "usecases": {
+    "eyebrow": "The UI toolkit that changes everything",
+    "line1": "Build interfaces",
+    "line2": "that feel",
+    "line2_accent": "alive.",
+    "line3": "Ship",
+    "word1": "faster.",
+    "word2": "smarter.",
+    "word3": "better.",
+    "word4": "today.",
+    "stat1": "UI Components",
+    "stat2": "Developers worldwide",
+    "stat3": "Average rating",
+    "cta": "Get NovaKit"
+  },
   "superpowers": {
     "eyebrow": "Explore NovaKit in a whole new way.",
     "title": "Everyday superpowers for modern product interfaces.",
