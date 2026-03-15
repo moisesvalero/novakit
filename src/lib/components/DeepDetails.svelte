@@ -324,6 +324,38 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .marquee {
+      height: auto;
+      max-height: none;
+      overflow: visible;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .list {
+      animation: none;
+      font-size: 1rem;
+    }
+
+    .list li {
+      margin-bottom: 0.55rem;
+      cursor: default;
+    }
+
+    .text {
+      padding-right: 0;
+    }
+
+    .tag {
+      display: none;
+    }
+
+    .list li:hover .text {
+      transform: none;
+    }
+  }
+
   @media (min-width: 1600px) {
     .deep-details {
       padding-block: 6.2rem 5.6rem;

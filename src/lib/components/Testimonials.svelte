@@ -558,10 +558,39 @@
   @media (max-width: 640px) {
     .testimonials {
       padding-inline: 1.25rem;
+      padding-bottom: 4.2rem;
     }
 
     .columns {
       grid-template-columns: minmax(0, 1fr);
+      margin-top: 0;
+    }
+
+    .col:nth-child(2),
+    .col:nth-child(3) {
+      display: none;
+    }
+
+    .col {
+      -webkit-mask-image: none;
+      mask-image: none;
+      overflow: visible;
+    }
+
+    .stack-slow,
+    .stack-medium,
+    .stack-fast {
+      animation: none;
+      gap: 0.85rem;
+    }
+
+    .col:first-child .quote:nth-child(n + 5) {
+      display: none;
+    }
+
+    .quote {
+      padding: 1.35rem 1.25rem;
+      border-radius: 18px;
     }
   }
 
