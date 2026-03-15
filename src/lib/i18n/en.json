@@ -49,6 +49,9 @@
     }
   },
   "componentGallery": {
+    "eyebrow": "A KIT, NOT JUST A TEMPLATE",
+    "title": "Craft full product experiences with ready-made UI blocks.",
+    "subtitle": "Swap sections, tweak tokens, and keep everything on-brand without touching a design tool every single time.",
     "ui1": {
       "title": "Analytics Dashboard",
       "live": "Live",

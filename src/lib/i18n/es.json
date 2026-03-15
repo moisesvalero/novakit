@@ -53,6 +53,9 @@
     }
   },
   "componentGallery": {
+    "eyebrow": "UN KIT, NO SOLO UNA PLANTILLA",
+    "title": "Crea experiencias de producto completas con bloques de UI listos para usar.",
+    "subtitle": "Intercambia secciones, ajusta tokens y mantén todo alineado con tu marca sin tocar una herramienta de diseño cada vez.",
     "ui1": {
       "title": "Panel de analítica",
       "live": "En vivo",

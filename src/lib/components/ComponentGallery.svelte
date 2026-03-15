@@ -22,6 +22,13 @@ onMount(() => {
 });
 </script>
 
+<section class="gallery-section">
+  <header class="gallery-intro">
+    <p class="gallery-eyebrow">{$t('componentGallery.eyebrow')}</p>
+    <h2 class="gallery-title">{$t('componentGallery.title')}</h2>
+    <p class="gallery-subtitle">{$t('componentGallery.subtitle')}</p>
+  </header>
+
 <div class="gallery">
 
   <div class="card">
@@ -147,9 +154,15 @@ onMount(() => {
   </div>
 
 </div>
+</section>
 
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
+.gallery-section { padding: 0 1.5rem; }
+.gallery-intro { max-width: 760px; margin: 0 auto 1.8rem; text-align: center; }
+.gallery-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #8e8e93; font-weight: 600; margin-bottom: 0.95rem; font-family: -apple-system, sans-serif; }
+.gallery-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.04em; color: #101126; margin-bottom: 0.9rem; font-family: -apple-system, sans-serif; }
+.gallery-subtitle { font-size: 1.08rem; line-height: 1.6; color: #6b6b80; max-width: 640px; margin: 0 auto; font-family: -apple-system, sans-serif; }
 .gallery { display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:2rem; max-width:1100px; margin:0 auto; }
 .card { border-radius:16px; background:#fff; border:1px solid rgba(0,0,0,0.07); overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); cursor:pointer; opacity: 0; transform: translateY(72px) scale(0.84); transition: opacity 0.9s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .card:global(.visible) { opacity: 1; transform: translateY(0) scale(1); }
@@ -291,4 +304,13 @@ onMount(() => {
 .ui6-progress-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,#7c5cbf,#4f8ef7,#a78bfa); background-size:200% 100%; animation:progressFill 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate, progressShimmer 2s linear infinite; }
 @keyframes progressFill { 0%{width:30%} 100%{width:88%} }
 @keyframes progressShimmer { 0%{background-position:100% 0} 100%{background-position:-100% 0} }
+@media (max-width: 768px) {
+  .gallery-section { padding: 0 1rem; }
+  .gallery-intro { margin-bottom: 1.4rem; }
+  .gallery-title { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+  .gallery-subtitle { font-size: 0.95rem; }
+  .gallery { grid-template-columns: 1fr; padding: 1rem 0 2rem; }
+  .card-preview { height: 218px; }
+  .card:nth-child(3) .card-preview { height: 248px; }
+}
 </style>
