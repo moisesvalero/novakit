@@ -14,31 +14,42 @@
     </div>
 
     <div class="steps" use:reveal={{ stage: 'content', delay: 120 }}>
-      <article class="step step-1" use:reveal={{ stage: 'content', delay: 170 }}>
+      <div class="connector" aria-hidden="true">
+        <span class="line"></span>
+        <span class="dot"></span>
+      </div>
+
+      <article class="step" use:reveal={{ stage: 'content', delay: 170 }}>
         <span class="badge">01</span>
-        <h3>Drop in the starter layout</h3>
-        <p>
-          Start from opinionated SvelteKit layouts that already solve navigation,
-          spacing, and typography the way modern apps expect.
-        </p>
+        <div class="icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M5 6.5h14M5 12h14M5 17.5h8" />
+          </svg>
+        </div>
+        <h3>Design</h3>
+        <p>Define UI blocks, spacing, and style tokens.</p>
       </article>
 
-      <article class="step step-2" use:reveal={{ stage: 'content', delay: 250 }}>
+      <article class="step" use:reveal={{ stage: 'content', delay: 250 }}>
         <span class="badge">02</span>
-        <h3>Compose sections like building blocks</h3>
-        <p>
-          Mix hero, pricing, onboarding, and product sections as independent
-          components instead of wrestling with one giant template.
-        </p>
+        <div class="icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M7 7h10v10H7zM4 20h16" />
+          </svg>
+        </div>
+        <h3>Build</h3>
+        <p>Compose reusable components directly in Svelte.</p>
       </article>
 
-      <article class="step step-3" use:reveal={{ stage: 'content', delay: 330 }}>
+      <article class="step" use:reveal={{ stage: 'content', delay: 330 }}>
         <span class="badge">03</span>
-        <h3>Ship with production‑ready motion</h3>
-        <p>
-          Use pre‑wired scroll reveals and hover states that stay smooth at
-          60fps, even on lower‑end laptops and mobile devices.
-        </p>
+        <div class="icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M6 12l4 4 8-8M4 20h16" />
+          </svg>
+        </div>
+        <h3>Ship</h3>
+        <p>Launch polished screens with ready-to-use motion.</p>
       </article>
     </div>
   </div>
@@ -83,40 +94,52 @@
 
   .steps {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
     position: relative;
-    padding-top: 0.25rem;
+    padding-top: 0.5rem;
   }
 
-  .steps::before {
-    content: "";
+  .connector {
     position: absolute;
-    top: 0.75rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    height: 1px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, rgba(148, 163, 184, 0.1), rgba(99, 102, 241, 0.5), rgba(148, 163, 184, 0.1));
-    transform-origin: left;
-    transform: scaleX(0);
-    opacity: 0;
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease-out;
+    top: 2.8rem;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .steps.is-visible::before {
-    transform: scaleX(1);
-    opacity: 1;
+  .line {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.25), rgba(99, 102, 241, 0.65), rgba(99, 102, 241, 0.25));
+  }
+
+  .dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.14);
+    transform: translateY(-50%);
+    animation: slide 2s infinite linear;
   }
 
   .step {
-    padding: 1.4rem 1.5rem;
+    padding: 1.4rem 1rem 1.1rem;
     border-radius: 18px;
     border: 1px solid rgba(15, 23, 42, 0.06);
     background: rgba(255, 255, 255, 0.96);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.03);
     position: relative;
     overflow: hidden;
+    text-align: center;
+    z-index: 1;
     transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.35s var(--ease-out-soft);
@@ -136,6 +159,27 @@
     z-index: 1;
   }
 
+  .icon-wrap {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0 auto 0.65rem;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-wrap svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--accent);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
   .badge {
     display: inline-flex;
     align-items: center;
@@ -147,12 +191,7 @@
     color: var(--accent);
     font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: 0.6rem;
-    box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.7);
-  }
-
-  .step.is-visible .badge {
-    animation: badge-glow 0.9s ease-out 0.35s forwards;
+    margin-bottom: 0.55rem;
   }
 
   h3 {
@@ -162,9 +201,9 @@
   }
 
   .step p {
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.55;
   }
 
   .step:hover {
@@ -172,21 +211,27 @@
     transform: translateY(-2px) translateX(0);
   }
 
-  @keyframes badge-glow {
+  @keyframes slide {
     0% {
-      box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.0);
-    }
-    40% {
-      box-shadow: 0 0 0 6px rgba(129, 140, 248, 0.35);
+      left: 0;
     }
     100% {
-      box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.0);
+      left: calc(100% - 10px);
     }
   }
 
   @media (max-width: 900px) {
     .inner {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .steps {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.9rem;
+    }
+
+    .connector {
+      display: none;
     }
   }
 

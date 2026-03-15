@@ -1,7 +1,18 @@
 <script lang="ts">
 	import "../app.css"; // Importamos los estilos globales
+	import { onMount } from 'svelte';
 	// Nota: Asegúrate de tener el archivo favicon.svg en src/lib/assets/
 	import favicon from '$lib/assets/favicon.svg';
+
+	onMount(() => {
+		try {
+			if (window.self !== window.top) {
+				document.documentElement.classList.add('in-iframe');
+			}
+		} catch {
+			document.documentElement.classList.add('in-iframe');
+		}
+	});
 
 	function handleLinkMove(event: MouseEvent) {
 		const target = event.currentTarget as HTMLElement;
@@ -24,7 +35,9 @@
 	  <nav>
 		<a href="#features" onmousemove={handleLinkMove}>Features</a>
 		<a href="#pricing" onmousemove={handleLinkMove}>Pricing</a>
-		<a class="nav-cta" href="#contact" onmousemove={handleLinkMove}>Contact</a>
+		<a href="#testimonials" onmousemove={handleLinkMove}>Testimonials</a>
+		<a href="#components" onmousemove={handleLinkMove}>Components</a>
+		<a class="nav-cta" href="https://www.linkedin.com/in/moisesvalero/" target="_blank" rel="noopener noreferrer" onmousemove={handleLinkMove}>Contact</a>
 	  </nav>
 	</div>
   </header>

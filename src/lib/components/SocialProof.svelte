@@ -4,12 +4,38 @@
 
 <section class="social-proof">
   <div class="inner">
-    <p class="eyebrow" use:reveal={{ stage: 'title' }}>Trusted by modern product teams</p>
+    <p class="eyebrow" use:reveal={{ stage: 'title' }}>Trusted by teams using</p>
     <div class="logos">
-      <span use:reveal={{ stage: 'content', delay: 80 }}>Superflow</span>
-      <span use:reveal={{ stage: 'content', delay: 140 }}>Pixelforge</span>
-      <span use:reveal={{ stage: 'content', delay: 200 }}>UI Studio</span>
-      <span use:reveal={{ stage: 'content', delay: 260 }}>Brightlabs</span>
+      <div class="logo-item" aria-label="Svelte" use:reveal={{ stage: 'content', delay: 80 }}>
+        <img src="/logos/svelte.svg" alt="Svelte" />
+      </div>
+      <div class="logo-item" aria-label="Framer" use:reveal={{ stage: 'content', delay: 120 }}>
+        <img src="/logos/framer.svg" alt="Framer" />
+      </div>
+      <div class="logo-item" aria-label="Stripe" use:reveal={{ stage: 'content', delay: 160 }}>
+        <img src="/logos/stripe.svg" alt="Stripe" />
+      </div>
+      <div class="logo-item" aria-label="Supabase" use:reveal={{ stage: 'content', delay: 200 }}>
+        <img src="/logos/supabase.svg" alt="Supabase" />
+      </div>
+      <div class="logo-item" aria-label="Arc Browser" use:reveal={{ stage: 'content', delay: 240 }}>
+        <img src="/logos/arc_browser.svg" alt="Arc Browser" />
+      </div>
+      <div class="logo-item" aria-label="Vercel" use:reveal={{ stage: 'content', delay: 280 }}>
+        <img src="/logos/vercel.svg" alt="Vercel" />
+      </div>
+      <div class="logo-item" aria-label="Linear" use:reveal={{ stage: 'content', delay: 320 }}>
+        <img src="/logos/linear.svg" alt="Linear" />
+      </div>
+      <div class="logo-item" aria-label="Raycast" use:reveal={{ stage: 'content', delay: 360 }}>
+        <img src="/logos/raycast.svg" alt="Raycast" />
+      </div>
+      <div class="logo-item" aria-label="Railway" use:reveal={{ stage: 'content', delay: 400 }}>
+        <img src="/logos/railway.svg" alt="Railway" />
+      </div>
+      <div class="logo-item" aria-label="Resend" use:reveal={{ stage: 'content', delay: 440 }}>
+        <img src="/logos/resend-wordmark-black.svg" alt="Resend" />
+      </div>
     </div>
     <div class="stats">
       <div class="stat" use:reveal={{ stage: 'content', delay: 320 }}>
@@ -61,18 +87,35 @@
   .logos {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.9rem;
     flex: 2 1 260px;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
   }
 
-  .logos span {
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    background-color: rgba(255, 255, 255, 0.9);
-    transition: border-color 0.35s var(--ease-out-soft), background-color 0.35s var(--ease-out-soft);
+  .logo-item {
+    width: 86px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.88);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .logo-item img {
+    max-width: 68px;
+    max-height: 20px;
+    width: auto;
+    height: auto;
+    filter: grayscale(1);
+    opacity: 0.4;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+
+  .logo-item:hover img {
+    filter: grayscale(0);
+    opacity: 1;
   }
 
   .stats {

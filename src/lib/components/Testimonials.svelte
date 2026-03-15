@@ -1,5 +1,74 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { reveal } from '$lib/reveal';
+
+  const avatarPalette = [
+    '#6366f1',
+    '#8b5cf6',
+    '#ec4899',
+    '#f97316',
+    '#14b8a6',
+    '#0ea5e9',
+    '#84cc16',
+    '#f59e0b',
+    '#ef4444',
+    '#10b981'
+  ];
+
+  function getInitials(fullName: string) {
+    const words = fullName.trim().split(/\s+/).filter(Boolean);
+    if (words.length === 0) return 'NA';
+    const first = words[0]?.[0] ?? '';
+    const second = words[1]?.[0] ?? words[words.length - 1]?.[0] ?? '';
+    return (first + second).toUpperCase();
+  }
+
+  function getColorIndex(input: string) {
+    let hash = 0;
+    for (let i = 0; i < input.length; i += 1) {
+      hash = (hash << 5) - hash + input.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash) % avatarPalette.length;
+  }
+
+  onMount(() => {
+    const metas = document.querySelectorAll<HTMLElement>('.quote .meta');
+
+    metas.forEach((meta) => {
+      const nameEl = meta.querySelector<HTMLElement>('.name');
+      const roleEl = meta.querySelector<HTMLElement>('.role');
+      if (!nameEl || !roleEl) return;
+
+      const name = nameEl.textContent?.trim() ?? '';
+      const roleRaw = roleEl.textContent?.trim() ?? '';
+      const [roleTitle, ...companyParts] = roleRaw.split(' en ');
+      const company = companyParts.join(' en ').trim() || 'Independent';
+
+      const avatar = document.createElement('span');
+      avatar.className = 'avatar';
+      avatar.textContent = getInitials(name);
+      avatar.style.setProperty('--avatar-bg', avatarPalette[getColorIndex(name)]);
+
+      const identity = document.createElement('div');
+      identity.className = 'identity';
+
+      const nextName = document.createElement('span');
+      nextName.className = 'name';
+      nextName.textContent = name;
+
+      const nextRole = document.createElement('span');
+      nextRole.className = 'role-title';
+      nextRole.textContent = roleTitle.trim();
+
+      const nextCompany = document.createElement('span');
+      nextCompany.className = 'company';
+      nextCompany.textContent = company;
+
+      identity.append(nextName, nextRole, nextCompany);
+      meta.replaceChildren(avatar, identity);
+    });
+  });
 </script>
 
 <section class="testimonials" id="testimonials">
@@ -414,21 +483,57 @@
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.25rem;
+    position: relative;
+    padding-left: 1.15rem;
+  }
+
+  .body::before {
+    content: "\201C";
+    position: absolute;
+    left: -0.12rem;
+    top: -0.5rem;
+    font-size: 2.1rem;
+    line-height: 1;
+    color: rgba(99, 102, 241, 0.42);
+    font-weight: 700;
   }
 
   .meta {
     display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
+    align-items: center;
+    gap: 0.75rem;
   }
 
-  .name {
+  .meta :global(.avatar) {
+    --avatar-bg: #6366f1;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--avatar-bg);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.16);
+    flex-shrink: 0;
+  }
+
+  .meta :global(.identity) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+
+  .meta :global(.name) {
     font-size: 0.92rem;
     font-weight: 600;
     color: var(--text-main);
   }
 
-  .role {
+  .meta :global(.role-title),
+  .meta :global(.company) {
     font-size: 0.82rem;
     color: var(--text-secondary);
   }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PhoneMockup from '$lib/components/PhoneMockup.svelte';
   import { reveal } from '$lib/reveal';
 </script>
 
@@ -10,14 +11,7 @@
 
   <div class="layout">
     <div class="device" use:reveal={{ stage: 'content', delay: 140 }}>
-      <div class="device-frame">
-        <div class="device-header"></div>
-        <div class="device-screen">
-          <div class="bubble bubble-1"></div>
-          <div class="bubble bubble-2"></div>
-          <div class="bubble bubble-3"></div>
-        </div>
-      </div>
+      <PhoneMockup />
     </div>
 
     <div class="grid">
@@ -123,6 +117,8 @@
     box-shadow: 0 30px 80px rgba(15, 23, 42, 0.65);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .device-header {
@@ -136,42 +132,32 @@
   .device-screen {
     background: rgba(15, 23, 42, 0.95);
     border-radius: 26px;
-    padding: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    position: relative;
     overflow: hidden;
+    flex: 1;
+    min-height: 0;
   }
 
-  .bubble {
-    border-radius: 18px;
-    padding: 0.65rem 0.75rem;
-    background: linear-gradient(135deg, #22c55e, #4ade80);
-    color: white;
-    font-size: 0.7rem;
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
+  .device-screen-viewport {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+    border-radius: inherit;
   }
 
-  .bubble-2 {
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.5);
-  }
-
-  .bubble-3 {
-    background: linear-gradient(135deg, #f97316, #fb7185);
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.45);
-  }
-
-  .bubble-1 {
-    animation: float-up 8s linear infinite;
-  }
-
-  .bubble-2 {
-    animation: float-up 10s linear infinite;
-  }
-
-  .bubble-3 {
-    animation: float-up 12s linear infinite;
+  .device-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 390px;
+    height: 844px;
+    border: none;
+    transform-origin: top left;
+    display: block;
   }
 
   .grid {
@@ -249,18 +235,6 @@
     }
     100% {
       transform: translateX(0) scale(1);
-    }
-  }
-
-  @keyframes float-up {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3px);
-    }
-    100% {
-      transform: translateY(0);
     }
   }
 

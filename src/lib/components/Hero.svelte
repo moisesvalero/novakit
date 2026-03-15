@@ -105,15 +105,18 @@
 
   .spline-watermark-mask {
     position: absolute;
-    right: -4px;
+    left: 0;
+    right: 0;
     bottom: -4px;
-    width: clamp(240px, 26vw, 390px);
+    width: 100%;
     height: clamp(84px, 10vw, 138px);
     pointer-events: none;
     z-index: 5;
+    filter: blur(8px);
+    opacity: 1;
     background:
-      linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.88) 58%, transparent),
-      linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.84) 44%, transparent);
+      linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.96) 62%, rgba(255, 255, 255, 0.78) 82%, transparent),
+      linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.72) 74%, transparent);
   }
 
   .hero-inner {
@@ -341,9 +344,10 @@
     }
 
     .spline-watermark-mask {
-      right: -4px;
+      left: 0;
+      right: 0;
       bottom: -4px;
-      width: clamp(230px, 52vw, 320px);
+      width: 100%;
       height: clamp(82px, 21vw, 130px);
     }
 
@@ -388,9 +392,10 @@
     }
 
     .spline-watermark-mask {
-      right: -6px;
+      left: 0;
+      right: 0;
       bottom: -6px;
-      width: clamp(210px, 62vw, 300px);
+      width: 100%;
       height: clamp(84px, 25vw, 136px);
     }
   }

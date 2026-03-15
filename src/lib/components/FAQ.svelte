@@ -1,145 +1,72 @@
 <script lang="ts">
   import { reveal } from '$lib/reveal';
-
-  type FaqItem = {
-    question: string;
-    answer: string;
-    open: boolean;
-  };
-
-  const { faqs, toggleFaq } = $props<{
-    faqs: FaqItem[];
-    toggleFaq: (index: number) => void;
-  }>();
 </script>
 
-<section id="faq" class="faq-section">
-  <h2 class="title" use:reveal={{ stage: 'title' }}>Common Questions</h2>
-  <div class="faq-container">
-    {#each faqs as item, i}
-      <div
-        class="faq-item motion-card"
-        class:open={item.open}
-        use:reveal={{ stage: 'content', delay: 140 + i * 60 }}
-      >
-        <button
-          type="button"
-          class="faq-question"
-          onclick={() => toggleFaq(i)}
-          aria-expanded={item.open}
-        >
-          <span class="question-text">{item.question}</span>
-          <span class="arrow">▾</span>
-        </button>
-        <div class="answer-wrapper" class:open={item.open}>
-          <div class="answer">
-            <p>{item.answer}</p>
-          </div>
-        </div>
+<section class="cta-section">
+  <div class="cta-orb1"></div>
+  <div class="cta-orb2"></div>
+  <div class="cta-grid"></div>
+  <div class="cta-inner" use:reveal={{ stage: 'content', delay: 60 }}>
+    <div class="cta-eyebrow cta-assemble" use:reveal={{ stage: 'content', delay: 110 }}>
+      <div class="cta-dot"></div>
+      Ready to build
+    </div>
+    <h2 class="cta-title cta-assemble" use:reveal={{ stage: 'content', delay: 170 }}>Your next interface<br><span class="cta-gradient">starts here.</span></h2>
+    <p class="cta-subtitle cta-assemble" use:reveal={{ stage: 'content', delay: 230 }}>Stop building from scratch. NovaKit gives you everything you need to ship beautiful products in hours, not weeks.</p>
+    <div class="cta-buttons cta-assemble" use:reveal={{ stage: 'content', delay: 290 }}>
+      <a class="btn-primary" href="#pricing">Get NovaKit</a>
+      <a class="btn-secondary" href="#components">Explore components</a>
+    </div>
+    <div class="cta-social-proof cta-assemble" use:reveal={{ stage: 'content', delay: 350 }}>
+      <div class="cta-avatars">
+        <div class="cta-av" style="background:linear-gradient(135deg,#7c5cbf,#a78bfa);"></div>
+        <div class="cta-av" style="background:linear-gradient(135deg,#2563eb,#60a5fa);"></div>
+        <div class="cta-av" style="background:linear-gradient(135deg,#34c759,#86efac);"></div>
+        <div class="cta-av" style="background:linear-gradient(135deg,#f97316,#fbbf24);"></div>
       </div>
-    {/each}
+      <span class="cta-proof-text"><strong>2,400+</strong> developers trust NovaKit</span>
+      <div class="cta-divider"></div>
+      <div class="cta-stars">
+        <div class="cta-star"></div>
+        <div class="cta-star"></div>
+        <div class="cta-star"></div>
+        <div class="cta-star"></div>
+        <div class="cta-star"></div>
+      </div>
+      <span class="cta-proof-text"><strong>4.9</strong> / 5 rating</span>
+    </div>
   </div>
 </section>
 
 <style>
-  .faq-section {
-    max-width: 800px;
-    margin: 6rem auto 8rem;
-    padding: 0 1.5rem;
-  }
-
-  .title {
-    font-size: clamp(2rem, 5.5vw, 2.5rem);
-    text-align: center;
-    margin-bottom: 2rem;
-    letter-spacing: -0.03em;
-  }
-
-  .faq-container {
-    margin-top: 2rem;
-    text-align: left;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 0.5rem 0;
-    transition:
-      background-color 0.25s ease-out,
-      border-color 0.25s ease-out,
-      opacity 0.25s ease-out;
-    opacity: 0.9;
-  }
-
-  .faq-item.open {
-    background: rgba(99, 102, 241, 0.04);
-    border-left: 2px solid var(--accent);
-    padding-left: 0.75rem;
-    opacity: 1;
-  }
-
-  .faq-item:not(.open) {
-    opacity: 0.8;
-  }
-
-  .faq-question {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-main);
-    cursor: pointer;
-    padding: 1.5rem 0;
-    text-align: left;
-  }
-
-  .question-text {
-    display: inline-block;
-    transition: transform 0.2s ease-out;
-  }
-
-  /* Micro‑interacción: desplaza un poco el texto en hover cuando está cerrado */
-  .faq-item:not(.open) .faq-question:hover .question-text {
-    transform: translateX(4px);
-  }
-
-  .answer-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.32s cubic-bezier(0.25, 0.8, 0.25, 1),
-      opacity 0.32s ease-out;
-    opacity: 0;
-  }
-
-  .answer-wrapper.open {
-    grid-template-rows: 1fr;
-    opacity: 1;
-  }
-
-  .answer {
-    overflow: hidden;
-    padding-bottom: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .arrow {
-    color: var(--accent);
-    font-size: 1.5rem;
-    transition: transform 0.35s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  }
-
-  .faq-item.open .arrow {
-    transform: rotate(180deg);
-  }
-
-  @media (min-width: 1600px) {
-    .faq-section {
-      max-width: 920px;
-    }
-  }
+.cta-section { position:relative; overflow:hidden; padding:120px 2rem; background:linear-gradient(160deg,#fafafa 0%,#f0ebff 40%,#e8f0ff 70%,#f5f0ff 100%); text-align:center; }
+.cta-orb1 { position:absolute; top:-60px; left:-60px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%); filter:blur(40px); pointer-events:none; animation:orb-float-a 14s ease-in-out infinite; }
+.cta-orb2 { position:absolute; bottom:-80px; right:-40px; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle,rgba(99,130,246,0.1) 0%,transparent 70%); filter:blur(50px); pointer-events:none; animation:orb-float-b 16s ease-in-out infinite; }
+.cta-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(120,80,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(120,80,255,0.04) 1px,transparent 1px); background-size:50px 50px; pointer-events:none; }
+.cta-inner { position:relative; z-index:2; max-width:680px; margin:0 auto; }
+.cta-assemble { opacity:0; transform:translate3d(0,22px,0) scale(0.97); filter:blur(6px); transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1),transform 0.8s cubic-bezier(0.22,1,0.36,1),filter 0.75s cubic-bezier(0.22,1,0.36,1); }
+.cta-assemble:global(.is-visible) { opacity:1; transform:translate3d(0,0,0) scale(1); filter:blur(0); }
+.cta-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(124,92,191,0.08); border:1px solid rgba(124,92,191,0.15); border-radius:999px; padding:6px 16px; font-size:11px; font-weight:600; color:#7c5cbf; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:28px; }
+.cta-dot { width:6px; height:6px; border-radius:50%; background:#7c5cbf; animation:ctapulse 2s infinite; }
+@keyframes ctapulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)} }
+@keyframes orb-float-a { 0%,100% { transform:translate3d(0,0,0) scale(1); } 50% { transform:translate3d(18px,-14px,0) scale(1.08); } }
+@keyframes orb-float-b { 0%,100% { transform:translate3d(0,0,0) scale(1); } 50% { transform:translate3d(-22px,12px,0) scale(1.06); } }
+.cta-title { font-size:clamp(36px,5vw,58px); font-weight:800; color:#1a1a2e; line-height:1.1; margin-bottom:20px; letter-spacing:-0.02em; }
+.cta-gradient { background:linear-gradient(135deg,#7c5cbf,#4f8ef7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.cta-subtitle { font-size:18px; color:#6b6b80; line-height:1.6; margin-bottom:44px; max-width:480px; margin-left:auto; margin-right:auto; }
+.cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:0; }
+.btn-primary { background: var(--accent); color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; border: none; cursor: pointer; display: inline-block; }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+.btn-secondary { padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; color: var(--text-main); background: var(--bg-soft); transition: background 0.2s ease; display: inline-block; }
+.btn-secondary:hover { background: #f0f1f3; }
+.cta-social-proof { margin-top:48px; display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; }
+.cta-avatars { display:flex; }
+.cta-av { width:28px; height:28px; border-radius:50%; border:2px solid #fff; margin-left:-8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+.cta-av:first-child { margin-left:0; }
+.cta-proof-text { font-size:13px; color:#8e8e93; }
+.cta-proof-text strong { color:#1a1a2e; font-weight:600; }
+.cta-divider { width:1px; height:20px; background:rgba(0,0,0,0.1); }
+.cta-stars { display:flex; gap:2px; }
+.cta-star { width:12px; height:12px; background:#fbbf24; clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
 </style>
 
