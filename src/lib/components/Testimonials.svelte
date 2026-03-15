@@ -571,20 +571,7 @@
       display: none;
     }
 
-    .col {
-      -webkit-mask-image: none;
-      mask-image: none;
-      overflow: visible;
-    }
-
-    .stack-slow,
-    .stack-medium,
-    .stack-fast {
-      animation: none;
-      gap: 0.85rem;
-    }
-
-    .col:first-child .quote:nth-child(n + 5) {
+    .col:first-child .quote:nth-child(n + 7) {
       display: none;
     }
 
