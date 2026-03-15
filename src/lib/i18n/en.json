@@ -51,7 +51,7 @@
   },
   "componentGallery": {
     "eyebrow": "A KIT, NOT JUST A TEMPLATE",
-    "title": "Craft full product experiences with ready-made UI blocks.",
+    "title": "Craft full product experiences with <span class='gradient-text'>ready-made UI blocks.</span>",
     "subtitle": "Swap sections, tweak tokens, and keep everything on-brand without touching a design tool every single time.",
     "ui1": {
       "title": "Analytics Dashboard",
@@ -167,7 +167,7 @@
     "card6Desc": "Built for real products, not just portfolios: loading states, empty states, and error messaging included."
   },
   "features": {
-    "title": "Designed for Modern Interfaces",
+    "title": "Designed for <span class='gradient-text'>Modern Interfaces</span>",
     "subtitle": "Production-ready components with polished aesthetics, modern performance, and a consistent visual experience across your product.",
     "cards": {
       "cleanTitle": "Clean Components",

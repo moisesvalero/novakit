@@ -55,7 +55,7 @@
   },
   "componentGallery": {
     "eyebrow": "UN KIT, NO SOLO UNA PLANTILLA",
-    "title": "Crea experiencias de producto completas con bloques de UI listos para usar.",
+    "title": "Crea experiencias de producto completas con <span class='gradient-text'>bloques de UI listos para usar.</span>",
     "subtitle": "Intercambia secciones, ajusta tokens y mantén todo alineado con tu marca sin tocar una herramienta de diseño cada vez.",
     "ui1": {
       "title": "Panel de analítica",
@@ -171,7 +171,7 @@
     "card6Desc": "Pensado para productos reales: incluye estados de carga, vacío y error desde el inicio."
   },
   "features": {
-    "title": "Diseñado para interfaces modernas",
+    "title": "Diseñado para <span class='gradient-text'>interfaces modernas</span>",
     "subtitle": "Componentes listos para producción con una estética cuidada, rendimiento moderno y una experiencia visual consistente en todo tu producto.",
     "cards": {
       "cleanTitle": "Componentes limpios",

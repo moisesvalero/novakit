@@ -118,7 +118,7 @@
   .footer-inner { flex-direction:column; align-items:center; text-align:center; }
   .footer-right { justify-content:center; }
   .footer-divider { display:none; }
-  .footer-credit { display:none; }
+  .footer-credit { display:block; }
 }
 </style>
 
