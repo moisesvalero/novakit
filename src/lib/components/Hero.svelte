@@ -2,14 +2,20 @@
   import { onMount } from 'svelte';
 
   let heroLoaded = $state(false);
+  let splineLoaded = $state(false);
+  let showSpline = $state(false);
 
   onMount(() => {
     const id = requestAnimationFrame(() => {
       heroLoaded = true;
     });
+    const splineTimer = setTimeout(() => {
+      showSpline = true;
+    }, 600);
 
     return () => {
       cancelAnimationFrame(id);
+      clearTimeout(splineTimer);
     };
   });
 </script>
@@ -17,11 +23,16 @@
 <section class="hero" class:hero-loaded={heroLoaded}>
   <div class="hero-bg">
     <div class="hero-bg-media">
-      <iframe
-        src="https://my.spline.design/interactiveaiwebsite-4kvHSstoxbqWFDKp11RVJkCe/"
-        loading="eager"
-        title="NovaKit 3D Hero"
-      ></iframe>
+      {#if showSpline}
+        <div class="spline-wrap" class:loaded={splineLoaded}>
+          <iframe
+            src="https://my.spline.design/interactiveaiwebsite-4kvHSstoxbqWFDKp11RVJkCe/"
+            loading="lazy"
+            title="NovaKit 3D Hero"
+            onload={() => (splineLoaded = true)}
+          ></iframe>
+        </div>
+      {/if}
     </div>
     <div class="spline-watermark-mask" aria-hidden="true"></div>
   </div>
@@ -86,6 +97,17 @@
     display: block;
     pointer-events: auto;
     will-change: transform;
+  }
+
+  .spline-wrap {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .spline-wrap.loaded {
+    opacity: 1;
   }
 
   .hero-bg::before {
@@ -225,11 +247,11 @@
 
   .hero-loaded .hero-title {
     text-shadow: 0 24px 70px rgba(15, 23, 42, 0.2);
-    animation: hero-title-bounce 940ms cubic-bezier(0.22, 1.7, 0.36, 1) 180ms both;
+    animation: hero-title-bounce 940ms cubic-bezier(0.34, 1.56, 0.64, 1) 180ms both;
   }
 
   .hero-loaded .hero-subtitle {
-    animation: hero-sub-bounce 860ms cubic-bezier(0.22, 1.6, 0.36, 1) 280ms both;
+    animation: hero-sub-bounce 860ms cubic-bezier(0.34, 1.56, 0.64, 1) 280ms both;
   }
 
   h1 {
@@ -265,7 +287,7 @@
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     border: none;
     cursor: pointer;
     display: inline-block;
@@ -283,7 +305,7 @@
     font-weight: 600;
     color: var(--text-main);
     background: var(--bg-soft);
-    transition: background 0.2s ease;
+    transition: background 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     display: inline-block;
   }
 

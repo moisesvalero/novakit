@@ -85,9 +85,9 @@
     position: relative;
     overflow: hidden;
     transition:
-      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.6s var(--ease-out-soft),
-      border-color 0.6s var(--ease-out-soft);
+      transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+      border-color 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .case h3 {

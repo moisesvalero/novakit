@@ -140,9 +140,9 @@
     overflow: hidden;
     text-align: center;
     z-index: 1;
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s var(--ease-out-soft);
+    transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .step::before {

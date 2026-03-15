@@ -110,7 +110,7 @@
     height: auto;
     filter: grayscale(1);
     opacity: 0.4;
-    transition: filter 0.3s ease, opacity 0.3s ease;
+    transition: filter 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .logo-item:hover img {

@@ -107,7 +107,7 @@
 
   .toggle-container span {
     color: var(--text-secondary);
-    transition: color 0.3s;
+    transition: color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .toggle-container span.active {
@@ -143,7 +143,7 @@
     height: 22px;
     background: white;
     border-radius: 50%;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .toggle-circle.yearly {
@@ -169,10 +169,10 @@
     display: flex;
     flex-direction: column;
     transition:
-      opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
-      transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
-      box-shadow 0.35s var(--ease-out-soft),
-      border-color 0.35s var(--ease-out-soft);
+      opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      border-color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   /* Pro un poco más alto para destacar */
@@ -202,7 +202,7 @@
     opacity: 0.0;
     pointer-events: none;
     mix-blend-mode: soft-light;
-    animation: pro-glow 5s ease-in-out infinite alternate;
+    animation: pro-glow 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
   }
 
   .plan-info {
@@ -235,9 +235,9 @@
   .price-display .period {
     display: inline-block;
     transition:
-      opacity 0.35s ease-out,
-      transform 0.35s ease-out,
-      filter 0.35s ease-out;
+      opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      filter 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .pricing.toggling .amount,
@@ -289,8 +289,8 @@
     appearance: none;
     transition:
       background-position 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-      transform 0.26s var(--ease-soft-bounce),
-      box-shadow 0.26s var(--ease-soft-bounce);
+      transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .price-card .btn-primary:hover {

@@ -175,32 +175,32 @@
     transition:
       opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
       transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.3s var(--ease-out-soft),
-      border-color 0.3s var(--ease-out-soft);
+      box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      border-color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .card.is-visible:nth-child(1) {
-    animation: card-float 8s ease-in-out 0.8s infinite alternate;
+    animation: card-float 8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s infinite alternate;
   }
 
   .card.is-visible:nth-child(2) {
-    animation: card-float 9s ease-in-out 1s infinite alternate;
+    animation: card-float 9s cubic-bezier(0.34, 1.56, 0.64, 1) 1s infinite alternate;
   }
 
   .card.is-visible:nth-child(3) {
-    animation: card-float 7.5s ease-in-out 0.9s infinite alternate;
+    animation: card-float 7.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s infinite alternate;
   }
 
   .card.is-visible:nth-child(4) {
-    animation: card-float 8.5s ease-in-out 1.1s infinite alternate;
+    animation: card-float 8.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s infinite alternate;
   }
 
   .card.is-visible:nth-child(5) {
-    animation: card-float 9.5s ease-in-out 1.2s infinite alternate;
+    animation: card-float 9.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s infinite alternate;
   }
 
   .card.is-visible:nth-child(6) {
-    animation: card-float 7.8s ease-in-out 1.3s infinite alternate;
+    animation: card-float 7.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.3s infinite alternate;
   }
 
   .card h3 {
@@ -223,7 +223,7 @@
 
   /* Entrada inercial del mockup cuando la columna izquierda entra en viewport */
   .device.is-visible .device-frame {
-    animation: device-inertia 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: device-inertia 1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
 
   @keyframes device-inertia {

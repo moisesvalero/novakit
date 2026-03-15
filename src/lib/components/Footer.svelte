@@ -115,7 +115,7 @@
   }
 
   :global(.footer.is-visible) .footer-inner {
-    animation: footer-impact 900ms cubic-bezier(0.22, 1.2, 0.36, 1) 120ms both;
+    animation: footer-impact 900ms cubic-bezier(0.34, 1.56, 0.64, 1) 120ms both;
   }
 
   .side {
@@ -174,7 +174,7 @@
   }
 
   .animate-pulse {
-    animation: pulse 1.6s ease-in-out infinite;
+    animation: pulse 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
   }
 
   .status-label {
@@ -213,7 +213,7 @@
     bottom: -2px;
     height: 1px;
     background: linear-gradient(to right, transparent, #6366f1, transparent);
-    transition: left 0.25s ease-out, right 0.25s ease-out;
+    transition: left 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), right 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .credits a:hover::after {
@@ -235,7 +235,7 @@
     margin-right: 0.9rem;
     cursor: pointer;
     box-shadow: 0 10px 28px rgba(15, 23, 42, 0.35);
-    transition: border-color 0.22s ease-out, background-color 0.22s ease-out;
+    transition: border-color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .arrow-up {
@@ -243,7 +243,7 @@
     height: 16px;
     transition:
       transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
-      color 0.2s ease-out;
+      color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .back-to-top:hover {
