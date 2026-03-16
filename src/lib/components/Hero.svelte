@@ -438,6 +438,15 @@
       min-height: clamp(720px, 100svh, 860px);
     }
 
+    .copy {
+      padding: 1.5rem 1.1rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     h1 {
       font-size: clamp(2rem, 7vw, 2.6rem);
     }
