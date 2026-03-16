@@ -5,7 +5,6 @@
   let heroLoaded = $state(false);
   let splineLoaded = $state(false);
   let showSpline = $state(false);
-  let isMobileHero = $state(false);
 
   onMount(() => {
     const id = requestAnimationFrame(() => {
@@ -15,18 +14,9 @@
       showSpline = true;
     }, 600);
 
-    const checkMobile = () => {
-      if (typeof window === 'undefined') return;
-      isMobileHero = window.innerWidth <= 640;
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
     return () => {
       cancelAnimationFrame(id);
       clearTimeout(splineTimer);
-      window.removeEventListener('resize', checkMobile);
     };
   });
 </script>
@@ -54,7 +44,7 @@
         {$t('hero.pill')}
       </div>
       <h1 class="hero-assemble hero-title">
-        {#if $locale === 'es' && isMobileHero}
+        {#if $locale === 'es'}
           <span class="hero-line-main">Kit creativo de UI</span><br />
           <span class="gradient-text hero-line-gradient">para apps web</span>
         {:else}
