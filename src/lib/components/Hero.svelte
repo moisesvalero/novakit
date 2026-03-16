@@ -438,6 +438,10 @@
       min-height: clamp(720px, 100svh, 860px);
     }
 
+    h1 {
+      font-size: clamp(2rem, 7vw, 2.6rem);
+    }
+
     .hero-bg-media {
       inset: 0;
       width: 100%;
