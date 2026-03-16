@@ -1,6 +1,5 @@
 <script lang="ts">
   import "../app.css"; // Importamos los estilos globales
-  import favicon from '$lib/assets/favicon.svg';
   import { t, locale, setLocale } from '$lib/i18n/index.js';
   
   let menuOpen = $state(false);
@@ -31,7 +30,6 @@
   
   <svelte:head>
 	<title>{$t('layout.title')}</title>
-	<link rel="icon" href={favicon} />
   </svelte:head>
   
   <header class="header" class:menu-open={menuOpen}>
