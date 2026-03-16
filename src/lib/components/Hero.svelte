@@ -439,11 +439,13 @@
     }
 
     .copy {
-      padding: 1.5rem 1.1rem;
+      padding: 1.6rem 1.6rem;
+      max-width: 360px;
+      width: 100%;
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
     }
 
