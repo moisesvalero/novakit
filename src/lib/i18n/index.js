@@ -5,11 +5,27 @@ import es from './es.json';
 /** @type {Record<string, any>} */
 const translations = { en, es };
 
-const browserLang = typeof navigator !== 'undefined'
-  ? navigator.language.slice(0, 2)
-  : 'en';
+/** @param {string | null | undefined} lang */
+function normalizeLocale(lang) {
+  if (!lang) return 'en';
+  const lower = lang.toLowerCase();
+  if (lower.startsWith('es')) return 'es';
+  return 'en';
+}
 
-const defaultLang = ['en', 'es'].includes(browserLang) ? browserLang : 'en';
+const defaultLang = (() => {
+  if (typeof window === 'undefined') return 'en';
+
+  const saved = normalizeLocale(localStorage.getItem('lang'));
+  if (saved === 'en' || saved === 'es') {
+    const rawSaved = localStorage.getItem('lang');
+    if (rawSaved && (rawSaved.toLowerCase().startsWith('en') || rawSaved.toLowerCase().startsWith('es'))) {
+      return saved;
+    }
+  }
+
+  return normalizeLocale(navigator.language);
+})();
 
 export const locale = writable(defaultLang);
 
@@ -29,8 +45,12 @@ export const t = derived(locale, ($locale) => {
 
 /** @param {string} lang */
 export function setLocale(lang) {
-  locale.set(lang);
+  const normalized = normalizeLocale(lang);
+  locale.set(normalized);
   if (typeof localStorage !== 'undefined') {
-    localStorage.setItem('lang', lang);
+    localStorage.setItem('lang', normalized);
+  }
+  if (typeof document !== 'undefined') {
+    document.documentElement.lang = normalized;
   }
 }

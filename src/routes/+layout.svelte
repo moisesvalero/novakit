@@ -1,6 +1,5 @@
 <script lang="ts">
   import "../app.css"; // Importamos los estilos globales
-  import { onMount } from 'svelte';
   import favicon from '$lib/assets/favicon.svg';
   import { t, locale, setLocale } from '$lib/i18n/index.js';
   
@@ -28,16 +27,6 @@
     target.style.setProperty('--my', `${event.clientY - rect.top}px`);
   };
 
-  onMount(() => {
-    const saved = localStorage.getItem('lang');
-    if (saved === 'en' || saved === 'es') {
-      locale.set(saved);
-      return;
-    }
-
-    const detected = navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en';
-    setLocale(detected);
-  });
 </script>
   
   <svelte:head>
