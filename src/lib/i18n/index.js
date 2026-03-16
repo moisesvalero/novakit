@@ -14,16 +14,23 @@ function normalizeLocale(lang) {
 }
 
 const defaultLang = (() => {
-  if (typeof window === 'undefined') return 'en';
+  // En SSR y si no hay info del navegador, priorizamos ES
+  if (typeof window === 'undefined') return 'es';
 
   const saved = localStorage.getItem('lang');
   const hasManualSelection = localStorage.getItem('lang_manual') === '1';
 
+  // Si el usuario eligió manualmente idioma, respetamos siempre esa preferencia
   if (hasManualSelection && saved) {
     return normalizeLocale(saved);
   }
 
-  return normalizeLocale(navigator.language);
+  const nav = navigator.language || 'es';
+  const lower = nav.toLowerCase();
+
+  // Solo navegadores explícitamente en inglés arrancan en EN; el resto, ES
+  if (lower.startsWith('en')) return 'en';
+  return 'es';
 })();
 
 export const locale = writable(defaultLang);
