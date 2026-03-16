@@ -1,10 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { t } from '$lib/i18n/index.js';
+  import { t, locale } from '$lib/i18n/index.js';
 
   let heroLoaded = $state(false);
   let splineLoaded = $state(false);
   let showSpline = $state(false);
+  let isMobileHero = $state(false);
 
   onMount(() => {
     const id = requestAnimationFrame(() => {
@@ -14,9 +15,18 @@
       showSpline = true;
     }, 600);
 
+    const checkMobile = () => {
+      if (typeof window === 'undefined') return;
+      isMobileHero = window.innerWidth <= 640;
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     return () => {
       cancelAnimationFrame(id);
       clearTimeout(splineTimer);
+      window.removeEventListener('resize', checkMobile);
     };
   });
 </script>
@@ -44,8 +54,13 @@
         {$t('hero.pill')}
       </div>
       <h1 class="hero-assemble hero-title">
-        <span class="hero-line-main">{$t('hero.titleLine1')}</span><br />
-        <span class="gradient-text hero-line-gradient">{$t('hero.titleLine2')}</span>
+        {#if $locale === 'es' && isMobileHero}
+          <span class="hero-line-main">Kit creativo de UI</span><br />
+          <span class="gradient-text hero-line-gradient">para apps web</span>
+        {:else}
+          <span class="hero-line-main">{$t('hero.titleLine1')}</span><br />
+          <span class="gradient-text hero-line-gradient">{$t('hero.titleLine2')}</span>
+        {/if}
       </h1>
       <p class="subtitle hero-assemble hero-subtitle">
         {$t('hero.subtitle')}
