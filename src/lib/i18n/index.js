@@ -16,18 +16,21 @@ function normalizeLocale(lang) {
 const defaultLang = (() => {
   if (typeof window === 'undefined') return 'en';
 
-  const saved = normalizeLocale(localStorage.getItem('lang'));
-  if (saved === 'en' || saved === 'es') {
-    const rawSaved = localStorage.getItem('lang');
-    if (rawSaved && (rawSaved.toLowerCase().startsWith('en') || rawSaved.toLowerCase().startsWith('es'))) {
-      return saved;
-    }
+  const saved = localStorage.getItem('lang');
+  const hasManualSelection = localStorage.getItem('lang_manual') === '1';
+
+  if (hasManualSelection && saved) {
+    return normalizeLocale(saved);
   }
 
   return normalizeLocale(navigator.language);
 })();
 
 export const locale = writable(defaultLang);
+
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = defaultLang;
+}
 
 export const t = derived(locale, ($locale) => {
   return (
@@ -49,6 +52,7 @@ export function setLocale(lang) {
   locale.set(normalized);
   if (typeof localStorage !== 'undefined') {
     localStorage.setItem('lang', normalized);
+    localStorage.setItem('lang_manual', '1');
   }
   if (typeof document !== 'undefined') {
     document.documentElement.lang = normalized;

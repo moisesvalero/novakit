@@ -44,8 +44,8 @@
         {$t('hero.pill')}
       </div>
       <h1 class="hero-assemble hero-title">
-        {$t('hero.titleLine1')}<br />
-        <span class="gradient-text">Modern Web Apps</span>
+        <span class="hero-line-main">{$t('hero.titleLine1')}</span><br />
+        <span class="gradient-text hero-line-gradient">{$t('hero.titleLine2')}</span>
       </h1>
       <p class="subtitle hero-assemble hero-subtitle">
         {$t('hero.subtitle')}
@@ -265,6 +265,18 @@
   h1 span {
     color: var(--text-secondary);
     font-weight: 400;
+  }
+
+  .hero-line-main {
+    display: inline-block;
+    white-space: nowrap;
+    color: inherit;
+    font-weight: inherit;
+  }
+
+  .hero-line-gradient {
+    display: inline-block;
+    white-space: nowrap;
   }
 
   .gradient-text {

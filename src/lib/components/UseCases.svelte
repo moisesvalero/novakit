@@ -98,14 +98,15 @@
 .st-eyebrow-line { width:40px; height:1.5px; background:linear-gradient(90deg,#7c5cbf,transparent); flex-shrink:0; }
 .st-eyebrow-text { font-size:11px; font-weight:600; letter-spacing:0.15em; color:#8e8e93; text-transform:uppercase; }
 .st-headline { margin-bottom:64px; }
-.st-line { display:block; font-size:clamp(40px,8vw,96px); font-weight:900; line-height:0.95; letter-spacing:-0.04em; color:#1a1a2e; overflow:hidden; }
+.st-line { display:block; font-size:clamp(40px,8vw,96px); font-weight:900; line-height:1.02; letter-spacing:-0.04em; color:#1a1a2e; overflow:hidden; }
+.st-line:nth-child(3) { overflow:visible; padding-bottom:0.08em; }
 .st-line-inner { display:block; animation:lineReveal 1s cubic-bezier(0.16,1,0.3,1) forwards; opacity:0; transform:translateY(100%); }
 .st-line:nth-child(1) .st-line-inner{animation-delay:0.1s}
 .st-line:nth-child(2) .st-line-inner{animation-delay:0.25s}
 .st-line:nth-child(3) .st-line-inner{animation-delay:0.4s}
 .st-gradient { background:linear-gradient(135deg,#7c5cbf 0%,#4f8ef7 50%,#7c5cbf 100%); background-size:200% 100%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:gradShift 4s ease-in-out infinite; }
-.st-changing { display:inline-block; position:relative; min-width:220px; }
-.st-word { position:absolute; left:0; top:0; background:linear-gradient(135deg,#7c5cbf,#4f8ef7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:wordCycle 8s ease-in-out infinite; opacity:0; }
+.st-changing { display:inline-block; position:relative; min-width:220px; height:1.14em !important; overflow:visible; }
+.st-word { position:absolute; left:0; top:0; line-height:1.08; background:linear-gradient(135deg,#7c5cbf,#4f8ef7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:wordCycle 8s ease-in-out infinite; opacity:0; }
 .st-word:nth-child(1){animation-delay:0s}
 .st-word:nth-child(2){animation-delay:2s}
 .st-word:nth-child(3){animation-delay:4s}
