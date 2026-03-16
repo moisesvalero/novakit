@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { t } from '$lib/i18n/index.js';
   
   let time = $state('');
   let interval: ReturnType<typeof setInterval> | undefined;
@@ -27,7 +28,7 @@
       <div class="footer-logo">NK</div>
       <div class="footer-brand">
         <span class="footer-name">NovaKit</span>
-        <span class="footer-tagline">The last UI kit you'll ever need.</span>
+        <span class="footer-tagline">{$t('footer.tagline')}</span>
       </div>
     </div>
 
@@ -69,7 +70,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
       </button>
       <div class="footer-divider"></div>
-      <span class="footer-credit">Designed by <a href="https://moisesvalero.es" target="_blank" rel="noopener noreferrer">Moisés Valero</a></span>
+      <span class="footer-credit">{$t('footer.designedBy')} <a href="https://moisesvalero.es" target="_blank" rel="noopener noreferrer">Moisés Valero</a></span>
     </div>
   </div>
 </footer>

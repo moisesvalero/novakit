@@ -30,7 +30,13 @@
 
   onMount(() => {
     const saved = localStorage.getItem('lang');
-    if (saved) locale.set(saved);
+    if (saved === 'en' || saved === 'es') {
+      locale.set(saved);
+      return;
+    }
+
+    const detected = navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en';
+    setLocale(detected);
   });
 </script>
   
