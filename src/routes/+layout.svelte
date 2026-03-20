@@ -1,6 +1,9 @@
 <script lang="ts">
   import "../app.css"; // Importamos los estilos globales
   import { t, locale, setLocale } from '$lib/i18n/index.js';
+  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+  
+  injectSpeedInsights();
   
   let menuOpen = $state(false);
   
