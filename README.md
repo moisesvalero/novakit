@@ -1,4 +1,4 @@
-# NovaKit — Portfolio técnico
+# NovaKit - Portfolio técnico
 
 [![Demo en vivo](https://img.shields.io/badge/demo-novakit.vercel.app-7c5cbf?style=for-the-badge)](https://novakit.vercel.app/)
 [![Svelte 5](https://img.shields.io/badge/Svelte-5-ff3e00?style=flat-square&logo=svelte)](https://svelte.dev/)
