@@ -145,4 +145,4 @@ Más detalle en [SECURITY.md](./SECURITY.md).
 
 ## Licencia
 
-[MIT](./LICENSE) — puedes usar el código como referencia o base para tus propios proyectos; el nombre _NovaKit_ en este contexto es una marca ficticia de demo.
+[PolyForm Noncommercial 1.0.0](./LICENSE) — uso no comercial; el nombre _NovaKit_ en este contexto es una marca ficticia de demo.
