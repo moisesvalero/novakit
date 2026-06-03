@@ -172,7 +172,7 @@
 	}
 
 	/* Pro un poco más alto para destacar */
-	.price-card.featured.is-visible {
+	.price-card.featured:global(.is-visible) {
 		transform: translateY(-4px);
 	}
 
@@ -236,15 +236,15 @@
 			filter 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 	}
 
-	.pricing.toggling .amount,
-	.pricing.toggling .period {
+	.pricing:global(.toggling) .amount,
+	.pricing:global(.toggling) .period {
 		opacity: 0;
 		transform: translateY(-8px);
 		filter: blur(3px);
 	}
 
-	.pricing.toggling-done .amount,
-	.pricing.toggling-done .period {
+	.pricing:global(.toggling-done) .amount,
+	.pricing:global(.toggling-done) .period {
 		opacity: 1;
 		transform: translateY(0);
 		filter: blur(0);

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import '../app.css'; // Importamos los estilos globales
 	import { resolve } from '$app/paths';
 	import { t, locale, setLocale } from '$lib/i18n/index.js';
@@ -6,6 +7,7 @@
 
 	injectSpeedInsights();
 
+	let { children }: { children?: Snippet } = $props();
 	let menuOpen = $state(false);
 
 	const toggleMenu = () => {
@@ -137,7 +139,7 @@
 	{/if}
 </header>
 
-<slot />
+{@render children?.()}
 
 <style>
 	.header {

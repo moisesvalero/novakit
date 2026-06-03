@@ -240,7 +240,7 @@
 		font-size: 13px;
 		color: #8e8e93;
 	}
-	.cta-proof-text strong {
+	.cta-proof-text :global(strong) {
 		color: #1a1a2e;
 		font-weight: 600;
 	}

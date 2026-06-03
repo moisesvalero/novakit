@@ -599,24 +599,6 @@
 		align-items: center;
 		gap: 6px;
 	}
-	.ios-search-icon {
-		width: 10px;
-		height: 10px;
-		border: 1.5px solid #8e8e93;
-		border-radius: 50%;
-		position: relative;
-	}
-	.ios-search-icon::after {
-		content: '';
-		position: absolute;
-		bottom: -3px;
-		right: -3px;
-		width: 4px;
-		height: 1.5px;
-		background: #8e8e93;
-		transform: rotate(45deg);
-		border-radius: 1px;
-	}
 	.ios-search-text {
 		font-size: 10px;
 		color: #8e8e93;
@@ -667,19 +649,6 @@
 		font-size: 8px;
 		font-weight: 700;
 		color: #fff;
-	}
-	.ios-card-dots {
-		position: absolute;
-		top: 7px;
-		left: 8px;
-		display: flex;
-		gap: 3px;
-	}
-	.ios-card-dot {
-		width: 5px;
-		height: 5px;
-		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.6);
 	}
 	.ios-section-header {
 		display: flex;

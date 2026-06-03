@@ -146,7 +146,7 @@
 						</div>
 					</div>
 					<div class="vscode-terminal">
-						<div class="term-line">$ npm run dev — ready ✓</div>
+						<div class="term-line">$ pnpm run dev — ready ✓</div>
 					</div>
 				</div>
 			</div>
@@ -870,103 +870,6 @@
 			transform: scale(1.12);
 		}
 	}
-	.flow-wrap {
-		max-width: 1100px;
-		margin: 0 auto;
-		height: 80px;
-		display: flex;
-		align-items: center;
-	}
-	.flow-svg {
-		width: 100%;
-		height: 80px;
-	}
-	.fp1 {
-		fill: none;
-		stroke: url(#fg1);
-		stroke-width: 2;
-		stroke-linecap: round;
-		stroke-dasharray: 500;
-		stroke-dashoffset: 500;
-		animation: drawPath 1.8s ease forwards 0.6s;
-	}
-	.fp2 {
-		fill: none;
-		stroke: url(#fg2);
-		stroke-width: 2;
-		stroke-linecap: round;
-		stroke-dasharray: 500;
-		stroke-dashoffset: 500;
-		animation: drawPath 1.8s ease forwards 1.1s;
-	}
-	@keyframes drawPath {
-		to {
-			stroke-dashoffset: 0;
-		}
-	}
-	.flow-mobile {
-		display: none;
-		flex-direction: column;
-		max-width: 340px;
-		margin: 0 auto;
-		padding-top: 40px;
-	}
-	.mob-step {
-		display: flex;
-		align-items: flex-start;
-		gap: 16px;
-		width: 100%;
-	}
-	.mob-connector {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 28px;
-		flex-shrink: 0;
-		padding-top: 4px;
-	}
-	.mob-node {
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-		flex-shrink: 0;
-	}
-	.mob-line {
-		width: 2px;
-		min-height: 60px;
-		position: relative;
-		overflow: hidden;
-		margin: 4px 0;
-	}
-	.mob-arrow {
-		width: 0;
-		height: 0;
-		border-left: 5px solid transparent;
-		border-right: 5px solid transparent;
-	}
-	.mob-content {
-		flex: 1;
-		padding-bottom: 24px;
-	}
-	.mob-num {
-		font-size: 11px;
-		font-weight: 700;
-		color: #7c5cbf;
-		letter-spacing: 0.08em;
-		margin-bottom: 4px;
-	}
-	.mob-title {
-		font-size: 16px;
-		font-weight: 700;
-		color: #1a1a2e;
-		margin-bottom: 4px;
-	}
-	.mob-desc {
-		font-size: 13px;
-		color: #8e8e93;
-		line-height: 1.5;
-	}
-
 	@media (max-width: 768px) {
 		.workflow {
 			padding: 80px 24px;
