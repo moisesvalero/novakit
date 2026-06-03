@@ -12,13 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - run: corepack enable
+
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
-      - run: npm run format:check
-      - run: npm run lint:eslint
-      - run: npm run check
-      - run: npm run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run format:check
+      - run: pnpm run lint:eslint
+      - run: pnpm run check
+      - run: pnpm run build

@@ -3,6 +3,7 @@
 	"description": "Landing de portfolio técnico — Svelte 5, SvelteKit, i18n y despliegue en Vercel (marca ficticia NovaKit)",
 	"version": "1.0.0",
 	"type": "module",
+	"packageManager": "pnpm@10.24.0",
 	"license": "PolyForm-Noncommercial-1.0.0",
 	"author": "Moisés Valero (https://moisesvalero.es)",
 	"repository": {
